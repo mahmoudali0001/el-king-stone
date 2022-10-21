@@ -598,6 +598,7 @@ iframe {
   background-position: center;
   position: relative;
   padding: 100px 0;
+  border: 1px solid #333;
 }
 
 .counter .row {

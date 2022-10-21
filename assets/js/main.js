@@ -34,7 +34,7 @@ let counterNums = document.querySelectorAll(".counter-item .item-num");
 let started = false;
 
 window.onscroll = function () {
-  if (window.scrollY >= counterSection.offsetTop) {
+  if (window.scrollY >= counterSection.offsetTop - navbar.offsetHeight) {
     if (!started) {
       counterNums.forEach((el) => startCount(el));
     }
