@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="real Estate company" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="./assets/img/Logo.web" />
+    <!--  BootStrap  Link -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- main css file Link -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <!-- Wow.js File css -->
+    <link rel="stylesheet" href="./assets/css/animate.css" />
+
+    <title>الرئيسية - شركة الكينج ستون</title>
+  </head>
+  <body>
+    <!-- Start Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white wow fadeIn">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="./assets/img/Logo.web" alt="logo" class="logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >الرئيسية</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="who-are-we.html">من نحن</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="service.html">خدماتنا</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">اخبارنا</a>
+            </li>
+
+            <li class="nav-item last-link">
+              <a class="nav-link" id="nav-call" href="tel:01114426697"
+                >اتصل بنا</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Nav Bar -->
+
+    <!-- Start Header -->
+    <section class="container header">
+      <article
+        class="row gap-lg-0 gap-5 justify-content-center align-items-center"
+      >
+        <section class="col-lg-6 mt-lg-0 mt-4 wow slideInRight">
+          <h1 style="font-weight: bold">شركة الكينج للديكور و المقاولات</h1>
+          <p class="header-p">
+            نحن نسعى لتقديم افضل الخدمات بافضل سعر و افضل جودة مع الكينج ثقه
+            لاتنتهى
+          </p>
+          <section class="d-flex gap-4">
+            <article>
+              <img src="./assets/img/staircase (1).png" alt="" />
+              <span>ديكور داخلي</span>
+            </article>
+
+            <article>
+              <img src="./assets/img/staircase (2).png" alt="" />
+              <span>ديكور خارجي</span>
+            </article>
+            <article>
+              <img src="./assets/img/staircase.png" alt="" />
+              <span>تصميم</span>
+            </article>
+          </section>
+          <nav style="margin-top: 35px">
+            <a href="tel:01114426697" class="header-btn-call">اتصل بنا</a>
+            <a href="#service" class="header-btn-more">اعرف المزيد</a>
+          </nav>
+        </section>
+        <img
+          src="./assets/img/slider-four.jpg"
+          alt=""
+          class="col-lg-6 rounded header-img wow slideInLeft"
+        />
+      </article>
+    </section>
+    <!-- End Header-->
+
+    <!-- Start Our Service -->
+    <img src="./assets/img/wave.svg" alt="" />
+    <section class="service" id="service">
+      <h1 class="text-center service-header">خدماتنا</h1>
+      <section class="container">
+        <article class="shuffle-btns">
+          <span class="active wow fadeInRight" data-work="all">الكل</span>
+          <span data-work="exterior-design" class="wow fadeInDown"
+            >ديكور خارجي</span
+          >
+          <span data-work="interior-design" class="wow fadeInDown"
+            >ديكور داخلي</span
+          >
+          <span data-work=".anthor-works" class="wow fadeInLeft"
+            >اعمال اخرى</span
+          >
+        </article>
+        <section
+          class="row gap-5 mt-5 justify-content-center card-parent"
+        ></section>
+        <section class="pagination-wrapper"></section>
+      </section>
+    </section>
+    <!-- End Our Service -->
+
+    <!-- Start Gallery -->
+
+    <section class="gallery">
+      <h3>المعرض</h3>
+      <article class="container">
+        <article class="shuffle-btns mb-5">
+          <span class="active wow bounceInRight" data-work=".all">الكل</span>
+          <span class="wow bounceInDown">تشطيب وجهات حجر ابيض ازازاى</span>
+          <span class="wow bounceInDown">حجر هاشمى هيصم</span>
+          <span class="wow bounceInDown">خرسانات نيوجيرسي</span>
+          <span class="wow bounceInLeft">ديكورات داخلى</span>
+        </article>
+        <article
+          class="row gap-2 justify-content-center gallery-img-parent"
+        ></article>
+        <section class="pagination-wrapper"></section>
+      </article>
+    </section>
+
+    <section class="image-view"></section>
+    <section class="image-box">
+      <i id="exit-btn" class="fa-solid fa-xmark"></i>
+      <i id="prev-arrow" class="fa-solid fa-chevron-left"></i>
+      <i id="next-arrow" class="fa-solid fa-chevron-right"></i>
+
+      <div class="conut-parent">
+        <span class="img-length">31</span>/
+        <span class="count">5</span>
+      </div>
+    </section>
+
+    <!-- End Gallery -->
+
+    <!-- Start Counter -->
+    <section class="counter">
+      <div class="overlay"></div>
+      <article class="container">
+        <article class="row justify-content-center gap-4">
+          <article class="counter-item col-10 col-sm-6 col-md-4 col-lg-2">
+            <img src="./assets/img/user.png" alt="" />
+
+            <span class="item-num" data-goal="500">0</span>
+
+            <span class="item-name"> عميل </span>
+          </article>
+
+          <article class="counter-item col-10 col-sm-6 col-md-4 col-lg-2">
+            <img src="./assets/img/calendar.png" alt="" />
+
+            <span class="item-num" data-goal="200">0</span>
+
+            <span class="item-name"> اعمالنا المنتهية </span>
+          </article>
+
+          <article class="counter-item col-10 col-sm-6 col-md-4 col-lg-2">
+            <img src="./assets/img/construction.png" alt="" />
+
+            <span class="item-num" data-goal="10">0</span>
+
+            <span class="item-name"> اعمال تحت الانشاء </span>
+          </article>
+
+          <article class="counter-item col-10 col-sm-6 col-md-4 col-lg-2">
+            <img src="./assets/img/bulding.png" alt="" />
+
+            <span class="item-num" data-goal="300">0</span>
+
+            <span class="item-name"> مشاريعنا </span>
+          </article>
+        </article>
+      </article>
+    </section>
+    <!-- End Counter -->
+
+    <!-- Start testimonials -->
+    <section class="testimonials" id="testimonials">
+      <section class="my-5 py-5">
+        <h1 class="text-center">اراء عملائنا</h1>
+        <section class="container">
+          <section
+            class="row gap-4 mt-5 justify-content-center align-items-center wow"
+          >
+            <article
+              class="
+                text-center
+                shadow
+                ts-box
+                col-10 col-sm-6 col-md-4 col-lg-3
+                wow
+                slideInLeft
+              "
+            >
+              <i class="fa-solid fa-quote-left"></i>
+              <p class="card-p text-secondary">
+                بصراحة شغل ممتاز شركة جميلة جدا واهم حاجة عجبتنى فى الشركة
+                النظام والعمل الجاد والتسليم فى الوقت المحدد دا طبعاً جنب
+                الاسعار الممتازة الى مش ممكن تلاقيها عند حد
+              </p>
+
+              <hr />
+              <article class="person-info">
+                <img src="./assets/img/م-اسلام-السيد.jpg" alt="" />
+                <h2>م/ اسلام السيد</h2>
+              </article>
+            </article>
+            <article
+              class="
+                med-card
+                shadow
+                text-center
+                ts-box
+                col-10 col-sm-6 col-md-4 col-lg-3
+                wow
+                slideInDown
+              "
+            >
+              <i class="fa-solid fa-quote-left"></i>
+              <p class="card-p text-secondary">
+                احب اشكر شركة الكينج ستون على تعاونهم معانا فى تصميم ديكور فيلا
+                بأكتوبر على أعلى مستوى والالتزام بأدق >التفاصيل زي ما عرض
+                فالتصميمات قبل التنفيذ شكراً لكم من القلب
+              </p>
+              <hr />
+              <article class="person-info">
+                <img
+                  src="./assets/img/هشام-الجمل.jpg"
+                  style="height: 55px"
+                  alt=""
+                />
+                <h4>هشام الجمل</h4>
+              </article>
+            </article>
+            <article
+              class="
+                text-center
+                shadow
+                ts-box
+                col-10 col-sm-6 col-md-4 col-lg-3
+                wow
+                slideInRight
+              "
+            >
+              <i class="fa-solid fa-quote-left"></i>
+              <p class="card-p text-secondary">
+                حابة اشكر القائمين على شركة الكينج لسرعة التسليم والالتزام
+                بالمواعيد مع الدقة دى كانت أهم حاجة بدور عليها شكرا وان شاء الله
+                يكون فى تعامل بيما أكتر فى المستقبل القريب
+              </p>
+
+              <hr />
+              <article class="person-info">
+                <img src="./assets/img/doctor-israa.jpg" alt="" />
+                <h4>د/ اسراء المحمدي</h4>
+              </article>
+            </article>
+          </section>
+        </section>
+      </section>
+    </section>
+    <!-- End Testimonials -->
+
+    <!-- Start Footer -->
+    <footer class="pt-5 pb-4">
+      <article class="container">
+        <article
+          class="row text-center gap-5 justify-content-center text-white"
+        >
+          <article class="col-10 col-sm-6 col-md-4 col-lg-3 wow slideInRight">
+            <img src="./assets/img/Logo.web" alt="logo" class="logo" />
+            <nav class="links">
+              <a href="https://twitter.com/elking1decor" target="_blank"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a href="https://www.facebook.com/king1stone" target="_blank"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/channel/UCOgavL7G3xfe6_yrIkpyacQ"
+                target="_blank"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a href="https://www.pinterest.com/elkingstone/" target="_blank">
+                <i class="fa-brands fa-pinterest"></i>
+              </a>
+            </nav>
+            <h6>تابعنا على مواقع التواصل الاجتماعى</h6>
+            <p>
+              نحن نسعى لتقديم افضل الخدمات بافضل سعر و افضل جودة مع الكينج ثقه
+              لاتنتهى
+            </p>
+          </article>
+
+          <article class="col-10 col-sm-6 col-md-4 col-lg-3 wow slideInDown">
+            <article class="company-info">
+              <article class="footer-info">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>طريق شق الثعبان , الزهراء , قسم طره</span>
+              </article>
+
+              <article class="footer-info">
+                <i class="fa-regular fa-clock"></i>
+                <span>كل الايام معادة الجمعة من 8 صباحا الى 8 مساءا</span>
+              </article>
+
+              <article class="footer-info">
+                <i class="fa-solid fa-phone-flip"></i>
+                <span>01091092700<br />01112355404</span><br />
+                <span></span>
+              </article>
+            </article>
+          </article>
+
+          <article class="col-10 col-sm-6 col-md-4 col-lg-3 wow slideInLeft">
+            <article class="gallery">
+              <img src="./assets/img/slider-four.jpg" alt="" />
+              <img src="./assets/img/7agr-2.jpg" alt="" />
+              <img src="./assets/img/4.jpg" alt="" />
+              <img src="./assets/img/slider-one.jpg" alt="" />
+              <img src="./assets/img/55.jpg" alt="" />
+              <img src="./assets/img/44.png" alt="" />
+            </article>
+          </article>
+        </article>
+      </article>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Copyright -->
+    <section
+      style="
+        background-color: rgba(219, 219, 219, 0.897);
+        text-align: center;
+        padding: 10px;
+        font-size: 15px;
+      "
+    >
+      2022 جميع الحقوق محفوظة لشركة الكينج ستون &copy;
+    </section>
+    <!-- End Copyright -->
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
