@@ -69,6 +69,13 @@ let counterNums = document.querySelectorAll(".counter-item .item-num");
 
 // End Catch Counter Section elements
 
+// Start Call Us Catch
+let callUsBtns = document.querySelectorAll(".call-us a");
+
+let callUsBtnToggle = document.querySelector(".call-us .message-btn");
+
+// End Call Us Catch
+
 // End Catch elements
 
 // Start Creating Variable
@@ -89,7 +96,7 @@ let newArrayOfImg = [];
 let filterOfServiceData = [];
 
 // Create a new Variable (service Section) Pagination Current Page to Start from Page One
-let servicegalleryPaginationCurrentPage = 1;
+let servicePaginationCurrentPage = 1;
 
 // Create a new Variable (service Section) Pagination ELements in in Every Page
 let serviceElementsInPaginations = 4;
@@ -691,7 +698,11 @@ function paginationButtons(page, items) {
   if (galleryPaginationCurrentPage == page) button.classList.add("active");
 
   // load data from array with every change of pages
-  button.addEventListener("click", function () {
+  button.addEventListener("click", function (e) {
+    paginationToggleButtonsActiveClass(
+      e.target,
+      document.querySelectorAll(".pagination-wrapper .btn")
+    );
     //set the page number from  counter
     galleryPaginationCurrentPage = page;
 
@@ -749,29 +760,23 @@ nextBtn.addEventListener("click", function () {
   imgChangeHanlde(); // load a new img to the background of popup
 });
 
-console.log("Counter When Next PopUp to prev img " + numbersOfCount);
-
 // Prev Button of PopUp Of Gallery Section Action
-// if the conuter value equal to first img in array return array to the last img
 prevBtn.addEventListener("click", function () {
+  // if the conuter value equal to first img in array return array to the last img
   numbersOfCount == 0
     ? (numbersOfCount = newArrayOfImg.length - 1) //  return array to the last img
     : --numbersOfCount; // if it false decline the counter +1
   imgChangeHanlde(); // load a new img to the background of popup
 });
 
-console.log("Counter When prev PopUp to next img " + numbersOfCount);
-
 // load a new img to the background of popup
 function imgChangeHanlde() {
-  // Change background of popup with imgs at array and count
-
-  console.log("Counter When change img " + numbersOfCount);
-
   // get url from array of img and index is counter
   imageBox.style.background = `url('${newArrayOfImg[numbersOfCount]}')`;
+
   // set the background Position
   imageBox.style.backgroundPosition = "center";
+
   // set the background Size
   imageBox.style.backgroundSize = "cover";
 
@@ -786,44 +791,73 @@ function serviceDisplayList(items, wrapper, elements_per_page, page) {
   //reset the Parent element to get the new elements of pagination page only
   wrapper.innerHTML = "";
 
-  // get the number to start slice the array
-  let start = elements_per_page * page;
+  // to start from Frist Page of pagination
+  page--;
 
-  // get the number of End slice the array
-  let end = start + elements_per_page;
+  // to get the start of array i will return
+  let loopStart = elements_per_page * page;
 
-  // get only elements i need from array to my current pagination page
-  let paginationItems = items.slice(start, end);
+  // to get the End of array i will return
+  let loopEnd = loopStart + elements_per_page;
+
+  // get only elements i need from array to my current page
+  let paginationItems = items.slice(loopStart, loopEnd);
 
   // Loop in array of pagination page to display the elements
-  for (let i = 0; i <= paginationItems.length; i++) {
-    let item = items[i];
-
+  for (let i = 0; i < paginationItems.length; i++) {
+    // Start Create Elements
     let card = document.createElement("section"); // Create the Parent card of service section
+
     let cardImgParent = document.createElement("div"); // Create div to take a the img of card
+
     let cardImage = document.createElement("img"); // create a img element to take the img src from array
+
     let cardInfoParent = document.createElement("div"); // create a div to be a parent of text in the card
+
     let h3 = document.createElement("h3"); // create h3 to take the card name in it
+
     let p = document.createElement("p"); // creaate p  to get the description  of card from array
+    // End Create Elements
 
-    cardImage.setAttribute("src", items[i].cardImgURL); // set the src Attribute  the take the img src from array
+    // Start Set the Elements Attribute
+    cardImage.setAttribute("src", "../assets/img/home.png"); // set the src Attribute  the take the img src from array
+
     cardImage.setAttribute("alt", ""); // set  the Alt Attribute to the img of card
-    h3.innerHTML = item.cardName; // set the card name and set it in to h3 head text of card
-    p.innerHTML = item.cardText; // set the description  of card from array
+    // End Set the Elements Attribute
 
+    // Start Set the Elements Text
+    h3.innerHTML = paginationItems[i].cardName; // set the card name and set it in to h3 head text of card
+
+    p.innerHTML = paginationItems[i].cardText; // set the description  of card from array
+    // End Set the Elements Text
+
+    // Start set the class list
     card.classList = "card card-four border-0 shadow p-0 pb-3  wow bounceIn"; // set the card class's
-    cardImgParent.classList = "card-img text-center"; // set the parent of image class's
-    cardImage.classList = "shadow-sm mx-auto mt-2"; // set the card img class's
-    cardImage.style.width = "50px"; // set the card img width
-    cardInfoParent.classList = "px-2 mt-3"; // set the parent of text in the card class's
-    h3.classList = "fs-5"; // set the head text in the card large font class with bootstarp
 
+    cardImgParent.classList = "card-img text-center"; // set the parent of image class's
+
+    cardImage.classList = "shadow-sm mx-auto mt-2"; // set the card img class's
+
+    cardImage.style.width = "50px"; // set the card img width
+
+    cardInfoParent.classList = "px-2 mt-3"; // set the parent of text in the card class's
+
+    h3.classList = "fs-5"; // set the head text in the card large font class with bootstarp
+    // End set the class list
+
+    //  Start append Elemetns to her parent
     wrapper.appendChild(card); // append the parent of card to service section
+
     card.appendChild(cardImgParent); // append the parent of img  to parent of card
+
     card.appendChild(cardInfoParent); // append parent of card head text to parent card
+
     cardImgParent.appendChild(cardImage); // append the img of card to her parent
+
     cardInfoParent.appendChild(h3); // append the head text to parent of text in the card
+
     cardInfoParent.appendChild(p); // append the description element to the parent of text
+    //  End append Elemetns to her parent
   }
 }
 
@@ -857,20 +891,23 @@ function paginationServiceButtons(page, items) {
   button.classList = "btn shuffle-btn-style";
 
   // make a condition to check if the current page is equal age to add class active
-  if (servicegalleryPaginationCurrentPage == page)
-    button.classList.add("active"); // add class active to button
+  if (servicePaginationCurrentPage == page) button.classList.add("active"); // add class active to button
 
   // add click event to the buttons
-  button.addEventListener("click", function () {
+  button.addEventListener("click", function (e) {
+    paginationToggleButtonsActiveClass(
+      e.target,
+      document.querySelectorAll(".pagination-wrapper .btn")
+    );
     // change the current page number from page
-    servicegalleryPaginationCurrentPage = page;
+    servicePaginationCurrentPage = page;
 
     // make a lad for a new data to next page or prev page
     serviceDisplayList(
       items,
       cardsParent,
       serviceElementsInPaginations,
-      servicegalleryPaginationCurrentPage
+      servicePaginationCurrentPage
     );
   });
 
@@ -880,14 +917,14 @@ function paginationServiceButtons(page, items) {
 // handle the shuffle to reset the current page of Pagination to first page and load a new data
 function serviceShuflleHanlde(newArray) {
   // reset the current page of Pagination to first page
-  servicegalleryPaginationCurrentPage = 1;
+  servicePaginationCurrentPage = 1;
 
   // get the new elements from  array of filter when shuffle is run
   serviceDisplayList(
     newArray,
     cardsParent,
     serviceElementsInPaginations,
-    servicegalleryPaginationCurrentPage
+    servicePaginationCurrentPage
   );
 
   // get the new Pagination elements from  array of  filter when shuffle is run
@@ -897,3 +934,18 @@ function serviceShuflleHanlde(newArray) {
     serviceElementsInPaginations
   );
 }
+
+// function to to remove and add class active to Pagination buttons
+function paginationToggleButtonsActiveClass(targetElement, buttons) {
+  buttons.forEach((el) => {
+    el.classList.remove("active");
+    targetElement.classList.add("active");
+  });
+}
+
+callUsBtnToggle.addEventListener("click", function () {
+  callUsBtns.forEach((el) => {
+    el.classList.toggle("show");
+  });
+  callUsBtnToggle.classList.toggle("show");
+});

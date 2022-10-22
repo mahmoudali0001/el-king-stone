@@ -120,7 +120,14 @@
     <footer class="pt-5 pb-4">
       <article class="container">
         <article
-          class="row text-center gap-5 justify-content-center text-white"
+          class="
+            row
+            text-center
+            gap-5
+            justify-content-center
+            text-white
+            align-items-center
+          "
         >
           <article class="col-10 col-sm-6 col-md-4 col-lg-3 wow slideInRight">
             <img src="./assets/img/Logo.web" alt="logo" class="logo" />
@@ -195,11 +202,40 @@
     </section>
     <!-- End Copyright -->
 
+    <!-- Start call-us section -->
+    <section class="call-us">
+      <a href="tel:00201091092700" class="phone-call-btn"
+        ><i class="fa-solid fa-phone"></i
+      ></a>
+      <a
+        href="https://api.whatsapp.com/send?phone=00201091092700"
+        target="_blank"
+        class="whats-app-btn"
+        ><i class="fa-brands fa-whatsapp"></i
+      ></a>
+      <a
+        href="https://www.facebook.com/king1stone"
+        class="facebook-btn"
+        target="_blank"
+        ><i class="fa-brands fa-facebook-f"></i
+      ></a>
+      <button href="#" class="message-btn">
+        <i class="fa-solid fa-envelope"></i>
+      </button>
+    </section>
+    <!-- end call-us section -->
+
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/wow.min.js"></script>
     <script>
       new WOW().init();
 
+      // Start Call Us Catch
+      let callUsBtns = document.querySelectorAll(".call-us a");
+
+      let callUsBtnToggle = document.querySelector(".call-us .message-btn");
+
+      // End Call Us Catch
       let navbar = document.querySelector(".navbar");
 
       window.addEventListener("scroll", function () {
@@ -212,6 +248,12 @@
           navbar.classList.add("bg-white");
           navbar.classList.remove("shadow");
         }
+      });
+
+      callUsBtnToggle.addEventListener("click", function () {
+        callUsBtns.forEach((el) => {
+          el.classList.toggle("show");
+        });
       });
     </script>
   </body>

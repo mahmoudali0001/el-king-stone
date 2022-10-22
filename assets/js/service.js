@@ -11,6 +11,13 @@ let cardsPaginationWrapper = document.querySelector(
   ".service .pagination-wrapper"
 );
 
+// Start Call Us Catch
+let callUsBtns = document.querySelectorAll(".call-us a");
+
+let callUsBtnToggle = document.querySelector(".call-us .message-btn");
+
+// End Call Us Catch
+
 let cards = document.querySelectorAll(".service .container .card");
 
 const cardsData = [
@@ -85,7 +92,7 @@ const cardsData = [
   },
 ];
 
-let serviceCurrentPage = 1;
+let servicePaginationCurrentPage = 1;
 let serviceRows = 4;
 
 serviceSwitcherList.forEach((btn) => {
@@ -185,24 +192,49 @@ function setupServicePagination(items, wrapper, rows_per_page) {
   }
 }
 
+// funtion to create the Pagination buttons of (service setion)
 function paginationServiceButtons(page, items) {
+  // Create element of button "Pagination buttons of (service setion)"
   let button = document.createElement("button");
+
+  // Get the number of Pagination buttons of from array
   button.innerHTML = page;
+
+  // set the Pagination buttons  class
   button.classList = "btn shuffle-btn-style";
 
-  if (serviceCurrentPage == page) button.classList.add("active");
+  // make a condition to check if the current page is equal age to add class active
+  if (servicePaginationCurrentPage == page) button.classList.add("active"); // add class active to button
 
-  button.addEventListener("click", function () {
-    serviceCurrentPage = page;
-    serviceDisplayList(items, cardsParent, serviceRows, serviceCurrentPage);
+  // add click event to the buttons
+  button.addEventListener("click", function (e) {
+    paginationToggleButtonsActiveClass(
+      e.target,
+      document.querySelectorAll(".pagination-wrapper .btn")
+    );
+    // change the current page number from page
+    servicePaginationCurrentPage = page;
+
+    // make a lad for a new data to next page or prev page
+    serviceDisplayList(
+      items,
+      cardsParent,
+      serviceRows,
+      servicePaginationCurrentPage
+    );
   });
 
   return button;
 }
 
 function serviceShuflleHanlde(newArray) {
-  serviceCurrentPage = 1;
-  serviceDisplayList(newArray, cardsParent, serviceRows, serviceCurrentPage);
+  servicePaginationCurrentPage = 1;
+  serviceDisplayList(
+    newArray,
+    cardsParent,
+    serviceRows,
+    servicePaginationCurrentPage
+  );
   setupServicePagination(newArray, cardsPaginationWrapper, serviceRows);
 }
 
@@ -216,4 +248,18 @@ window.addEventListener("scroll", function () {
     navbar.classList.remove("shadow");
     navbar.classList.add("bg-white");
   }
+});
+
+// function to to remove and add class active to Pagination buttons
+function paginationToggleButtonsActiveClass(targetElement, buttons) {
+  buttons.forEach((el) => {
+    el.classList.remove("active");
+    targetElement.classList.add("active");
+  });
+}
+
+callUsBtnToggle.addEventListener("click", function () {
+  callUsBtns.forEach((el) => {
+    el.classList.toggle("show");
+  });
 });
