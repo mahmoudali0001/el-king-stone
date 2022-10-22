@@ -47,7 +47,7 @@ a {
 }
 
 @media (min-width: 1025px) {
-  .last-link {
+  .navbar-nav .nav-link:hover {
     padding: 0px;
     border: 1px solid #f44336;
     border-radius: 0px 20px 20px 14px;
@@ -71,14 +71,24 @@ a {
   padding-bottom: 100px;
 }
 
-.header-btn-call {
+.header-btn-call,
+.header-btn-more {
+  position: relative;
   text-decoration: none;
   color: black;
-  padding: 7px 25px;
   font-size: 15px;
-  border: 1px solid #f44336;
+  overflow: hidden;
+  padding: 13px 0;
   border-radius: 0px 20px 20px 14px;
+  min-width: 120px;
+  display: inline-block;
+  text-align: center;
+}
+
+.header-btn-call {
+  border: 1px solid #f44336;
   margin-left: 5px;
+  transition: color 0.5s linear;
 }
 
 .header-p {
@@ -87,13 +97,60 @@ a {
 }
 
 .header-btn-more {
-  text-decoration: none;
-  color: black;
-  padding: 7px 25px;
-  font-size: 15px;
   background-color: #f44336;
   color: white;
-  border-radius: 0px 20px 4px 14px;
+}
+
+.header-btn-more:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #f44336;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  border-radius: 0px 20px 20px 14px;
+  transform: scaleX(0);
+}
+
+.header-btn-more:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.header-btn-more:hover::before {
+  transform: scaleX(1);
+}
+
+.header-btn-call:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #f44336;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  border-radius: 0px 20px 20px 14px;
+  transform: scaleX(0);
+}
+
+.header-btn-call:hover {
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+.header-btn-call:hover::before {
+  transform: scaleX(1);
 }
 
 .header span {
@@ -104,13 +161,6 @@ a {
   .header span {
     font-size: 11px;
   }
-}
-.header-btn-more:hover {
-  color: white;
-}
-
-.header-btn-call:hover {
-  color: black;
 }
 
 /* End Header */
@@ -314,18 +364,17 @@ iframe {
   cursor: pointer;
   transition: 0.5s ease-out;
   padding: 5px 15px;
+  border-radius: 0px 20px 20px 14px;
 }
 
 .shuffle-btns span:hover {
   color: white;
   background: #f443368f;
-  border-radius: 10px;
 }
 
 .shuffle-btns .active {
   color: white;
   background: #f44336;
-  border-radius: 10px;
 }
 
 /* Start Testimonials */
@@ -516,7 +565,7 @@ iframe {
 }
 
 .image-box {
-  width: 70vh;
+  width: 80vh;
   height: 80vh;
   position: fixed;
   top: 50%;
@@ -537,10 +586,15 @@ iframe {
 
 #exit-btn {
   position: absolute;
-  font-size: 27px;
   margin: 9px;
   z-index: 1025;
-  color: #f44336d1;
+  color: #ffffffd1;
+  background-color: #f44336;
+  padding: 4px 10px;
+  border-radius: 50%;
+  font-size: 20px;
+  top: -20px;
+  right: -20px;
 }
 
 #prev-arrow,
