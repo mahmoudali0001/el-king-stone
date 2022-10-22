@@ -747,7 +747,6 @@ exitBtn.addEventListener("click", closePopUp);
 
 // display none to Popup of imgs (Gallery section)
 function closePopUp() {
-  console.log("Counter When close popUp " + numbersOfCount);
   // remove the overlay of popUp
   imageView.style.display = "none";
   //remove the parent of Popup
