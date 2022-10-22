@@ -11,12 +11,14 @@ let cardsPaginationWrapper = document.querySelector(
   ".service .pagination-wrapper"
 );
 
-// Start Call Us Catch
+// Catch All Of buttons of call-us
 let callUsBtns = document.querySelectorAll(".call-us a");
 
+// Catch main Button to Show and hidden the buttons
 let callUsBtnToggle = document.querySelector(".call-us .message-btn");
 
-// End Call Us Catch
+// Catch The I element in the callUsBtnToggle
+let callUsBtnToggleIcon = document.querySelector(".call-us .message-btn i");
 
 let cards = document.querySelectorAll(".service .container .card");
 
@@ -25,21 +27,21 @@ const cardsData = [
     cardName: "الحجر ابيض ازازاى",
     cardText:
       "الحجر الازازاى هو احد انواع الحجر الهاشمى الذي يعتبر مصدر طبيعيى للصلابة و الاناقة فى ان واحد, و يتميز الحجر الازازاى باللون الابيض الناصع و الذي لايتغير ربيقية بعوامل الزمان ابدا",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "exterior-design",
   },
   {
     cardName: "الحجر الفرعوني",
     cardText:
       "بقدرته على تحمل كافة العوامل الخارجية مثل الرطوبة وأشعة الشمس والأتربة، وغيرها من العوامل الخارجية دون أن يفقد بريقه، فهو من الأحجار التي تستخدم خصيصًا لمقاومة المطر،",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "exterior-design",
   },
   {
     cardName: "الحجر الهاشمي",
     cardText:
       "الحجر الهاشمي نوع من الحجر الطبيعي متعدد الاستخدامات في الديكورات والأرضيات وتشطيب الواجهات في المنازل والقصور والفلل والمباني المختلفة متميزًا بصلابته ومتفرداً بجماله",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "exterior-design",
   },
 
@@ -47,7 +49,7 @@ const cardsData = [
     cardName: "الحجر مايكا",
     cardText:
       "ديكورات حجر مايكا متنوعة في السوق المصري ويتم اختيار أفضل نوع من بينها للعملاء وتصميم الديكورات المميزة أو تشطيب الواجهات",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "interior-design",
   },
 
@@ -55,7 +57,7 @@ const cardsData = [
     cardName: "الحجر البازلت",
     cardText:
       "حجر البازلت تستخدم في التشطيبات الداخلية والخارجية وعمل الواجهات والديكورات لأي بناء مثل القصور أو الفلل أو المنازل",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "exterior-design",
   },
 
@@ -63,7 +65,7 @@ const cardsData = [
     cardName: "الحجر التدبيش",
     cardText:
       "يتسخدم التدبيش فى اسوار المنازل و الفلل و المزارع و يتميز الدبش بقدرتة العالية على امتصاص الماء",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "exterior-design",
   },
 
@@ -71,7 +73,7 @@ const cardsData = [
     cardName: "الحجر الهاشمي",
     cardText:
       "الحجر الهاشمي نوع من الحجر الطبيعي متعدد الاستخدامات في الديكورات والأرضيات وتشطيب الواجهات في المنازل والقصور والفلل والمباني المختلفة متميزًا بصلابته ومتفرداً بجماله",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "exterior-design",
   },
 
@@ -79,7 +81,7 @@ const cardsData = [
     cardName: "الحجر ابيض ازازاى",
     cardText:
       "الحجر الازازاى هو احد انواع الحجر الهاشمى الذي يعتبر مصدر طبيعيى للصلابة و الاناقة فى ان واحد, و يتميز الحجر الازازاى باللون الابيض الناصع و الذي لايتغير ربيقية بعوامل الزمان ابدا",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "anthor-works",
   },
 
@@ -87,7 +89,7 @@ const cardsData = [
     cardName: "الحجر ابيض ازازاى",
     cardText:
       "الحجر الازازاى هو احد انواع الحجر الهاشمى الذي يعتبر مصدر طبيعيى للصلابة و الاناقة فى ان واحد, و يتميز الحجر الازازاى باللون الابيض الناصع و الذي لايتغير ربيقية بعوامل الزمان ابدا",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "anthor-works",
   },
 ];
@@ -262,4 +264,7 @@ callUsBtnToggle.addEventListener("click", function () {
   callUsBtns.forEach((el) => {
     el.classList.toggle("show");
   });
+  callUsBtnToggle.classList.toggle("show");
+  callUsBtnToggleIcon.classList.toggle("fa-envelope");
+  callUsBtnToggleIcon.classList.toggle("fa-xmark");
 });

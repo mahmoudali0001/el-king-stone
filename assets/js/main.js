@@ -70,9 +70,15 @@ let counterNums = document.querySelectorAll(".counter-item .item-num");
 // End Catch Counter Section elements
 
 // Start Call Us Catch
+
+// Catch All Of buttons of call-us
 let callUsBtns = document.querySelectorAll(".call-us a");
 
+// Catch main Button to Show and hidden the buttons
 let callUsBtnToggle = document.querySelector(".call-us .message-btn");
+
+// Catch The I element in the callUsBtnToggle
+let callUsBtnToggleIcon = document.querySelector(".call-us .message-btn i");
 
 // End Call Us Catch
 
@@ -150,163 +156,163 @@ function startCount(el) {
 // Creating Array of Data of Imgs and Name (Gallery Section)
 const galleryDataImgAndName = [
   {
-    imgUrl: "../assets/img/حجر هاشمى هيصم/gallery (1).jpeg",
+    imgUrl: "./assets/img/حجر هاشمى هيصم/gallery (1).jpeg",
     name: "حجر هاشمى هيصم",
   },
   {
-    imgUrl: "../assets/img/حجر هاشمى هيصم/gallery (2).jpeg",
+    imgUrl: "./assets/img/حجر هاشمى هيصم/gallery (2).jpeg",
     name: "حجر هاشمى هيصم",
   },
   {
-    imgUrl: "../assets/img/حجر هاشمى هيصم/gallery (3).jpeg",
+    imgUrl: "./assets/img/حجر هاشمى هيصم/gallery (3).jpeg",
     name: "حجر هاشمى هيصم",
   },
   {
-    imgUrl: "../assets/img/حجر هاشمى هيصم/gallery (4).jpeg",
+    imgUrl: "./assets/img/حجر هاشمى هيصم/gallery (4).jpeg",
     name: "حجر هاشمى هيصم",
   },
   {
-    imgUrl: "../assets/img/حجر هاشمى هيصم/gallery (5).jpeg",
+    imgUrl: "./assets/img/حجر هاشمى هيصم/gallery (5).jpeg",
     name: "حجر هاشمى هيصم",
   },
   {
-    imgUrl: "../assets/img/حجر هاشمى هيصم/gallery (6).jpeg",
+    imgUrl: "./assets/img/حجر هاشمى هيصم/gallery (6).jpeg",
     name: "حجر هاشمى هيصم",
   },
   {
-    imgUrl: "../assets/img/حجر هاشمى هيصم/gallery (7).jpeg",
+    imgUrl: "./assets/img/حجر هاشمى هيصم/gallery (7).jpeg",
     name: "حجر هاشمى هيصم",
   },
   {
-    imgUrl: "../assets/img/حجر هاشمى هيصم/gallery (8).jpeg",
+    imgUrl: "./assets/img/حجر هاشمى هيصم/gallery (8).jpeg",
     name: "حجر هاشمى هيصم",
   },
   {
-    imgUrl: "../assets/img/حجر هاشمى هيصم/gallery (9).jpeg",
+    imgUrl: "./assets/img/حجر هاشمى هيصم/gallery (9).jpeg",
     name: "حجر هاشمى هيصم",
   },
   {
-    imgUrl: "../assets/img/حجر هاشمى هيصم/gallery (10).jpeg",
+    imgUrl: "./assets/img/حجر هاشمى هيصم/gallery (10).jpeg",
     name: "حجر هاشمى هيصم",
   },
   {
-    imgUrl: "../assets/img/ديكورات داخلى/gallery (1).jpeg",
+    imgUrl: "./assets/img/ديكورات داخلى/gallery (1).jpeg",
     name: "ديكورات داخلى",
   },
   {
-    imgUrl: "../assets/img/ديكورات داخلى/gallery (2).jpeg",
+    imgUrl: "./assets/img/ديكورات داخلى/gallery (2).jpeg",
     name: "ديكورات داخلى",
   },
   {
-    imgUrl: "../assets/img/ديكورات داخلى/gallery (3).jpeg",
+    imgUrl: "./assets/img/ديكورات داخلى/gallery (3).jpeg",
     name: "ديكورات داخلى",
   },
   {
-    imgUrl: "../assets/img/ديكورات داخلى/gallery (4).jpeg",
+    imgUrl: "./assets/img/ديكورات داخلى/gallery (4).jpeg",
     name: "ديكورات داخلى",
   },
   {
-    imgUrl: "../assets/img/ديكورات داخلى/gallery (5).jpeg",
+    imgUrl: "./assets/img/ديكورات داخلى/gallery (5).jpeg",
     name: "ديكورات داخلى",
   },
   {
-    imgUrl: "../assets/img/ديكورات داخلى/gallery (6).jpeg",
+    imgUrl: "./assets/img/ديكورات داخلى/gallery (6).jpeg",
     name: "ديكورات داخلى",
   },
   {
-    imgUrl: "../assets/img/ديكورات داخلى/gallery (7).jpeg",
+    imgUrl: "./assets/img/ديكورات داخلى/gallery (7).jpeg",
     name: "ديكورات داخلى",
   },
   {
-    imgUrl: "../assets/img/ديكورات داخلى/gallery (8).jpeg",
+    imgUrl: "./assets/img/ديكورات داخلى/gallery (8).jpeg",
     name: "ديكورات داخلى",
   },
   {
-    imgUrl: "../assets/img/ديكورات داخلى/gallery (9).jpeg",
+    imgUrl: "./assets/img/ديكورات داخلى/gallery (9).jpeg",
     name: "ديكورات داخلى",
   },
   {
-    imgUrl: "../assets/img/ديكورات داخلى/gallery (10).jpeg",
+    imgUrl: "./assets/img/ديكورات داخلى/gallery (10).jpeg",
     name: "ديكورات داخلى",
   },
   {
-    imgUrl: "../assets/img/خرسانات نيوجيرسي/galler (1).jpeg",
+    imgUrl: "./assets/img/خرسانات نيوجيرسي/galler (1).jpeg",
     name: "خرسانات نيوجيرسي",
   },
   {
-    imgUrl: "../assets/img/خرسانات نيوجيرسي/galler (2).jpeg",
+    imgUrl: "./assets/img/خرسانات نيوجيرسي/galler (2).jpeg",
     name: "خرسانات نيوجيرسي",
   },
   {
-    imgUrl: "../assets/img/خرسانات نيوجيرسي/galler (3).jpeg",
+    imgUrl: "./assets/img/خرسانات نيوجيرسي/galler (3).jpeg",
     name: "خرسانات نيوجيرسي",
   },
   {
-    imgUrl: "../assets/img/خرسانات نيوجيرسي/galler (4).jpeg",
+    imgUrl: "./assets/img/خرسانات نيوجيرسي/galler (4).jpeg",
     name: "خرسانات نيوجيرسي",
   },
   {
-    imgUrl: "../assets/img/خرسانات نيوجيرسي/galler (5).jpeg",
+    imgUrl: "./assets/img/خرسانات نيوجيرسي/galler (5).jpeg",
     name: "خرسانات نيوجيرسي",
   },
   {
-    imgUrl: "../assets/img/خرسانات نيوجيرسي/galler (6).jpeg",
+    imgUrl: "./assets/img/خرسانات نيوجيرسي/galler (6).jpeg",
     name: "خرسانات نيوجيرسي",
   },
   {
-    imgUrl: "../assets/img/خرسانات نيوجيرسي/galler (7).jpeg",
+    imgUrl: "./assets/img/خرسانات نيوجيرسي/galler (7).jpeg",
     name: "خرسانات نيوجيرسي",
   },
   {
-    imgUrl: "../assets/img/خرسانات نيوجيرسي/galler (8).jpeg",
+    imgUrl: "./assets/img/خرسانات نيوجيرسي/galler (8).jpeg",
     name: "خرسانات نيوجيرسي",
   },
   {
-    imgUrl: "../assets/img/خرسانات نيوجيرسي/galler (9).jpeg",
+    imgUrl: "./assets/img/خرسانات نيوجيرسي/galler (9).jpeg",
     name: "خرسانات نيوجيرسي",
   },
   {
-    imgUrl: "../assets/img/خرسانات نيوجيرسي/galler (10).jpeg",
+    imgUrl: "./assets/img/خرسانات نيوجيرسي/galler (10).jpeg",
     name: "خرسانات نيوجيرسي",
   },
   {
-    imgUrl: "../assets/img/تشطيب وجهات حجر ابيض ازازى/galler (1).jpeg",
+    imgUrl: "./assets/img/تشطيب وجهات حجر ابيض ازازى/galler (1).jpeg",
     name: "تشطيب وجهات حجر ابيض ازازى",
   },
   {
-    imgUrl: "../assets/img/تشطيب وجهات حجر ابيض ازازى/galler (2).jpeg",
+    imgUrl: "./assets/img/تشطيب وجهات حجر ابيض ازازى/galler (2).jpeg",
     name: "تشطيب وجهات حجر ابيض ازازى",
   },
   {
-    imgUrl: "../assets/img/تشطيب وجهات حجر ابيض ازازى/galler (3).jpeg",
+    imgUrl: "./assets/img/تشطيب وجهات حجر ابيض ازازى/galler (3).jpeg",
     name: "تشطيب وجهات حجر ابيض ازازى",
   },
   {
-    imgUrl: "../assets/img/تشطيب وجهات حجر ابيض ازازى/galler (4).jpeg",
+    imgUrl: "./assets/img/تشطيب وجهات حجر ابيض ازازى/galler (4).jpeg",
     name: "تشطيب وجهات حجر ابيض ازازى",
   },
   {
-    imgUrl: "../assets/img/تشطيب وجهات حجر ابيض ازازى/galler (5).jpeg",
+    imgUrl: "./assets/img/تشطيب وجهات حجر ابيض ازازى/galler (5).jpeg",
     name: "تشطيب وجهات حجر ابيض ازازى",
   },
   {
-    imgUrl: "../assets/img/تشطيب وجهات حجر ابيض ازازى/galler (6).jpeg",
+    imgUrl: "./assets/img/تشطيب وجهات حجر ابيض ازازى/galler (6).jpeg",
     name: "تشطيب وجهات حجر ابيض ازازى",
   },
   {
-    imgUrl: "../assets/img/تشطيب وجهات حجر ابيض ازازى/galler (7).jpeg",
+    imgUrl: "./assets/img/تشطيب وجهات حجر ابيض ازازى/galler (7).jpeg",
     name: "تشطيب وجهات حجر ابيض ازازى",
   },
   {
-    imgUrl: "../assets/img/تشطيب وجهات حجر ابيض ازازى/galler (8).jpeg",
+    imgUrl: "./assets/img/تشطيب وجهات حجر ابيض ازازى/galler (8).jpeg",
     name: "تشطيب وجهات حجر ابيض ازازى",
   },
   {
-    imgUrl: "../assets/img/تشطيب وجهات حجر ابيض ازازى/galler (9).jpeg",
+    imgUrl: "./assets/img/تشطيب وجهات حجر ابيض ازازى/galler (9).jpeg",
     name: "تشطيب وجهات حجر ابيض ازازى",
   },
   {
-    imgUrl: "../assets/img/تشطيب وجهات حجر ابيض ازازى/galler (10).jpeg",
+    imgUrl: "./assets/img/تشطيب وجهات حجر ابيض ازازى/galler (10).jpeg",
     name: "تشطيب وجهات حجر ابيض ازازى",
   },
 ];
@@ -317,21 +323,21 @@ const cardsData = [
     cardName: "الحجر ابيض ازازاى",
     cardText:
       "الحجر الازازاى هو احد انواع الحجر الهاشمى الذي يعتبر مصدر طبيعيى للصلابة و الاناقة فى ان واحد, و يتميز الحجر الازازاى باللون الابيض الناصع و الذي لايتغير ربيقية بعوامل الزمان ابدا",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "exterior-design",
   },
   {
     cardName: "الحجر الفرعوني",
     cardText:
       "بقدرته على تحمل كافة العوامل الخارجية مثل الرطوبة وأشعة الشمس والأتربة، وغيرها من العوامل الخارجية دون أن يفقد بريقه، فهو من الأحجار التي تستخدم خصيصًا لمقاومة المطر،",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "exterior-design",
   },
   {
     cardName: "الحجر الهاشمي",
     cardText:
       "الحجر الهاشمي نوع من الحجر الطبيعي متعدد الاستخدامات في الديكورات والأرضيات وتشطيب الواجهات في المنازل والقصور والفلل والمباني المختلفة متميزًا بصلابته ومتفرداً بجماله",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "exterior-design",
   },
 
@@ -339,7 +345,7 @@ const cardsData = [
     cardName: "الحجر مايكا",
     cardText:
       "ديكورات حجر مايكا متنوعة في السوق المصري ويتم اختيار أفضل نوع من بينها للعملاء وتصميم الديكورات المميزة أو تشطيب الواجهات",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "interior-design",
   },
 
@@ -347,7 +353,7 @@ const cardsData = [
     cardName: "الحجر البازلت",
     cardText:
       "حجر البازلت تستخدم في التشطيبات الداخلية والخارجية وعمل الواجهات والديكورات لأي بناء مثل القصور أو الفلل أو المنازل",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "exterior-design",
   },
 
@@ -355,7 +361,7 @@ const cardsData = [
     cardName: "الحجر التدبيش",
     cardText:
       "يتسخدم التدبيش فى اسوار المنازل و الفلل و المزارع و يتميز الدبش بقدرتة العالية على امتصاص الماء",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "exterior-design",
   },
 
@@ -363,7 +369,7 @@ const cardsData = [
     cardName: "الحجر الهاشمي",
     cardText:
       "الحجر الهاشمي نوع من الحجر الطبيعي متعدد الاستخدامات في الديكورات والأرضيات وتشطيب الواجهات في المنازل والقصور والفلل والمباني المختلفة متميزًا بصلابته ومتفرداً بجماله",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "exterior-design",
   },
 
@@ -371,7 +377,7 @@ const cardsData = [
     cardName: "الحجر ابيض ازازاى",
     cardText:
       "الحجر الازازاى هو احد انواع الحجر الهاشمى الذي يعتبر مصدر طبيعيى للصلابة و الاناقة فى ان واحد, و يتميز الحجر الازازاى باللون الابيض الناصع و الذي لايتغير ربيقية بعوامل الزمان ابدا",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "anthor-works",
   },
 
@@ -379,7 +385,7 @@ const cardsData = [
     cardName: "الحجر ابيض ازازاى",
     cardText:
       "الحجر الازازاى هو احد انواع الحجر الهاشمى الذي يعتبر مصدر طبيعيى للصلابة و الاناقة فى ان واحد, و يتميز الحجر الازازاى باللون الابيض الناصع و الذي لايتغير ربيقية بعوامل الزمان ابدا",
-    cardImgURL: "../assets/img/home.png",
+    cardImgURL: "./assets/img/home.png",
     category: "anthor-works",
   },
 ];
@@ -820,7 +826,7 @@ function serviceDisplayList(items, wrapper, elements_per_page, page) {
     // End Create Elements
 
     // Start Set the Elements Attribute
-    cardImage.setAttribute("src", "../assets/img/home.png"); // set the src Attribute  the take the img src from array
+    cardImage.setAttribute("src", "./assets/img/home.png"); // set the src Attribute  the take the img src from array
 
     cardImage.setAttribute("alt", ""); // set  the Alt Attribute to the img of card
     // End Set the Elements Attribute
@@ -948,4 +954,6 @@ callUsBtnToggle.addEventListener("click", function () {
     el.classList.toggle("show");
   });
   callUsBtnToggle.classList.toggle("show");
+  callUsBtnToggleIcon.classList.toggle("fa-envelope");
+  callUsBtnToggleIcon.classList.toggle("fa-xmark");
 });

@@ -341,6 +341,7 @@ iframe {
   gap: 5px;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   margin-top: 20px;
 }
 
@@ -350,6 +351,7 @@ iframe {
   border: 2px solid #e89c31;
   color: #8c0e0f;
   transition: 0.3s;
+  transform: scale(0.9);
 }
 
 .shuffle-btn-style:hover,
@@ -357,7 +359,7 @@ iframe {
   background-color: #dba858;
   color: #fff;
   font-weight: bold;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .shuffle-btns span {
@@ -551,7 +553,7 @@ iframe {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
 }
 
 .image-view {
