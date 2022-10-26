@@ -72,16 +72,35 @@ let galleryPaginationElamentInPage = 9;
 
 // ------------------------------------- End Creating Global Variable ------------------------------ //
 
+// ---------------------------------------- Start Nav Bar add Class when scroll ------------------------------- //
+window.addEventListener("scroll", function () {
+  if (window.pageYOffset >= 82) {
+    navbar.classList.remove("bg-white");
+
+    navbar.classList.add("bg-sliver");
+
+    navbar.classList.add("shadow");
+  } else {
+    navbar.classList.remove("shadow");
+
+    navbar.classList.remove("bg-sliver");
+
+    navbar.classList.add("bg-white");
+  }
+});
+// ---------------------------------------- End Nav Bar add Class when scroll ------------------------------- //
+
 //---------------------------------------------- Start Counter Sedtion count when scroll ---------------------------------------- //
-window.onscroll = function () {
+window.addEventListener("scroll",function () {
   if (window.scrollY >= counterSection.offsetTop - navbar.offsetHeight) {
     if (!started) {
       counterNums.forEach((el) => startCount(el));
     }
 
     started = true;
-  }
-};
+  } 
+}) ;
+
 //---------------------------------------------- End Counter Sedtion count when scroll ---------------------------------------- //
 
 // ------------------------------------------ Start Start Count Function ----------------------------------- //
@@ -348,12 +367,6 @@ newArrayOfImg = filterGalleryData.map((el) => {
 });
 // ------------------------------------- End pushing data to newArrayOfImg ------------------------------- //
 
-// ------------------------------------- Start pushing data to filterOfServiceData ------------------------------- //
-filterOfServiceData = cardsData.map((el) => {
-  return el;
-});
-// ------------------------------------- End pushing data to filterOfServiceData ------------------------------- //
-
 // --------------------------------------- Start loop in shuffle buttons of Gallery ---------------------------- //
 gallerySwitcherList.forEach((btn) => {
   btn.addEventListener("click", (e) => {
@@ -444,6 +457,12 @@ function removeActiveClass(e) {
 }
 // --------------------------------------- End removeActiveClass Function  ---------------------------- //
 
+// ------------------------------------- Start pushing data to filterOfServiceData ------------------------------- //
+filterOfServiceData = cardsData.map((el) => {
+  return el;
+});
+// ------------------------------------- End pushing data to filterOfServiceData ------------------------------- //
+
 // --------------------------------------- Start loop in shuffle buttons of Service ---------------------------- //
 serviceSwitcherList.forEach((btn) => {
   btn.addEventListener("click", removeActive);
@@ -481,7 +500,6 @@ serviceSwitcherList.forEach((btn) => {
     }
   });
 });
-
 // --------------------------------------- End loop in shuffle buttons of Service ---------------------------- //
 
 // --------------------------------------- Start removeActive Function  ---------------------------- //
@@ -493,24 +511,6 @@ function removeActive() {
   });
 }
 // --------------------------------------- End removeActive Function  ---------------------------- //
-
-// ---------------------------------------- Start Nav Bar add Class when scroll ------------------------------- //
-window.addEventListener("scroll", function () {
-  if (window.pageYOffset >= 82) {
-    navbar.classList.remove("bg-white");
-
-    navbar.classList.add("bg-sliver");
-
-    navbar.classList.add("shadow");
-  } else {
-    navbar.classList.remove("shadow");
-
-    navbar.classList.remove("bg-sliver");
-
-    navbar.classList.add("bg-white");
-  }
-});
-// ---------------------------------------- End Nav Bar add Class when scroll ------------------------------- //
 
 // ---------------------------------------- Start manage Screen Width function  ------------------------------- //
 function manageScreenWidth(x) {

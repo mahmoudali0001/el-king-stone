@@ -334,3 +334,15 @@ function paginationToggleButtonsActiveClass(targetElement, buttons) {
   });
 }
 // --------------------------------------------- End paginationToggleButtonsActiveClass Function  --------------------------------- //
+
+
+// ------------------------------------------------------ Start callUsBtnToggle Click  ---------------------------------- //
+callUsBtnToggle.addEventListener("click", function () {
+  callUsBtns.forEach((el) => {
+    el.classList.toggle("show");
+  });
+  callUsBtnToggle.classList.toggle("show");
+  callUsBtnToggleIcon.classList.toggle("fa-envelope");
+  callUsBtnToggleIcon.classList.toggle("fa-xmark");
+});
+// -------------------------------------------------------- End callUsBtnToggle Click  -------------------------------------------- //
