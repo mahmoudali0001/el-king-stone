@@ -1,5 +1,7 @@
 new WOW().init();
 
+//--------------------------------------- Start Catching elements ---------------------------------//
+
 let serviceSwitcherList = document.querySelectorAll(
   ".service .shuffle-btns span"
 );
@@ -11,32 +13,25 @@ let cardsPaginationWrapper = document.querySelector(
   ".service .pagination-wrapper"
 );
 
-// Catch All Of buttons of call-us
 let callUsBtns = document.querySelectorAll(".call-us a");
 
-// Catch main Button to Show and hidden the buttons
 let callUsBtnToggle = document.querySelector(".call-us .message-btn");
 
-// Catch The I element in the callUsBtnToggle
 let callUsBtnToggleIcon = document.querySelector(".call-us .message-btn i");
 
 let cards = document.querySelectorAll(".service .container .card");
 
+//--------------------------------------- End Catching elements ---------------------------------//
+
+// ------------------------------------- Start Creating Global Variable ------------------------------ //
+
+let servicePaginationCurrentPage = 1;
+
+let serviceElementsInPaginations = 4;
+// ------------------------------------- End Creating Global Variable ------------------------------ //
+
+// ---------------------------------- Start Creating Array of Array of Objects cardsData ---------------------------- //
 const cardsData = [
-  {
-    cardName: "الحجر ابيض ازازاى",
-    cardText:
-      "الحجر الازازاى هو احد انواع الحجر الهاشمى الذي يعتبر مصدر طبيعيى للصلابة و الاناقة فى ان واحد, و يتميز الحجر الازازاى باللون الابيض الناصع و الذي لايتغير ربيقية بعوامل الزمان ابدا",
-    cardImgURL: "./assets/img/home.png",
-    category: "exterior-design",
-  },
-  {
-    cardName: "الحجر الفرعوني",
-    cardText:
-      "بقدرته على تحمل كافة العوامل الخارجية مثل الرطوبة وأشعة الشمس والأتربة، وغيرها من العوامل الخارجية دون أن يفقد بريقه، فهو من الأحجار التي تستخدم خصيصًا لمقاومة المطر،",
-    cardImgURL: "./assets/img/home.png",
-    category: "exterior-design",
-  },
   {
     cardName: "الحجر الهاشمي",
     cardText:
@@ -51,6 +46,20 @@ const cardsData = [
       "ديكورات حجر مايكا متنوعة في السوق المصري ويتم اختيار أفضل نوع من بينها للعملاء وتصميم الديكورات المميزة أو تشطيب الواجهات",
     cardImgURL: "./assets/img/home.png",
     category: "interior-design",
+  },
+  {
+    cardName: "الحجر ابيض ازازاى",
+    cardText:
+      "الحجر الازازاى هو احد انواع الحجر الهاشمى الذي يعتبر مصدر طبيعيى للصلابة و الاناقة فى ان واحد, و يتميز الحجر الازازاى باللون الابيض الناصع و الذي لايتغير ربيقية بعوامل الزمان ابدا",
+    cardImgURL: "./assets/img/home.png",
+    category: "exterior-design",
+  },
+  {
+    cardName: "الحجر الفرعوني",
+    cardText:
+      "بقدرته على تحمل كافة العوامل الخارجية مثل الرطوبة وأشعة الشمس والأتربة، وغيرها من العوامل الخارجية دون أن يفقد بريقه، فهو من الأحجار التي تستخدم خصيصًا لمقاومة المطر،",
+    cardImgURL: "./assets/img/home.png",
+    category: "exterior-design",
   },
 
   {
@@ -93,10 +102,27 @@ const cardsData = [
     category: "anthor-works",
   },
 ];
+// ---------------------------------- End Creating Array of Array of Objects cardsData ---------------------------- //
 
-let servicePaginationCurrentPage = 1;
-let serviceRows = 4;
+// ---------------------------------------- Start Nav Bar add Class when scroll ------------------------------- //
+window.addEventListener("scroll", function () {
+  if (window.pageYOffset >= 82) {
+    navbar.classList.remove("bg-white");
 
+    navbar.classList.add("bg-sliver");
+
+    navbar.classList.add("shadow");
+  } else {
+    navbar.classList.remove("shadow");
+
+    navbar.classList.remove("bg-sliver");
+
+    navbar.classList.add("bg-white");
+  }
+});
+// ---------------------------------------- End Nav Bar add Class when scroll ------------------------------- //
+
+// --------------------------------------- Start loop in shuffle buttons of Service ---------------------------- //
 serviceSwitcherList.forEach((btn) => {
   btn.addEventListener("click", removeActive);
 
@@ -105,27 +131,27 @@ serviceSwitcherList.forEach((btn) => {
   btn.addEventListener("click", function (e) {
     switch (e.target.dataset.work) {
       case "exterior-design":
-        let filter1 = cardsData.filter((el) => {
+        filterOfServiceData = cardsData.filter((el) => {
           return el.category == "exterior-design";
         });
 
-        serviceShuflleHanlde(filter1);
+        serviceShuflleHanlde(filterOfServiceData);
         break;
 
-      case ".interior-design":
-        let filter2 = cardsData.filter((el) => {
+      case "interior-design":
+        filterOfServiceData = cardsData.filter((el) => {
           return el.category == "interior-design";
         });
 
-        serviceShuflleHanlde(filter2);
+        serviceShuflleHanlde(filterOfServiceData);
         break;
 
       case ".anthor-works":
-        let filter3 = cardsData.filter((el) => {
+        filterOfServiceData = cardsData.filter((el) => {
           return el.category == "anthor-works";
         });
 
-        serviceShuflleHanlde(filter3);
+        serviceShuflleHanlde(filterOfServiceData);
         break;
 
       default:
@@ -133,138 +159,178 @@ serviceSwitcherList.forEach((btn) => {
     }
   });
 });
+// --------------------------------------- End loop in shuffle buttons of Service ---------------------------- //
 
+// --------------------------------------- Start removeActive Function  ---------------------------- //
 function removeActive() {
-  serviceSwitcherList.forEach((li) => {
-    li.classList.remove("active");
+  serviceSwitcherList.forEach((btn) => {
+    btn.classList.remove("active");
+
     this.classList.add("active");
   });
 }
+// --------------------------------------- End removeActive Function  ---------------------------- //
 
-function serviceDisplayList(items, wrapper, rows_per_page, page) {
+// --------------------------------------------- Start serviceDisplayList Function  --------------------------------- //
+function serviceDisplayList(items, wrapper, elements_per_page, page) {
   wrapper.innerHTML = "";
+
   page--;
 
-  let start = rows_per_page * page;
-  let end = start + rows_per_page;
-  let paginationItems = items.slice(start, end);
+  let loopStart = elements_per_page * page;
+
+  let loopEnd = loopStart + elements_per_page;
+
+  let paginationItems = items.slice(loopStart, loopEnd);
 
   for (let i = 0; i < paginationItems.length; i++) {
-    let item = paginationItems[i];
-
     let card = document.createElement("section");
+
     let cardImgParent = document.createElement("div");
+
     let cardImage = document.createElement("img");
+
     let cardInfoParent = document.createElement("div");
+
     let h3 = document.createElement("h3");
+
     let p = document.createElement("p");
-    let cardBtn = document.createElement("a");
 
-    cardBtn.setAttribute("href", "#");
-    cardImage.setAttribute("src", item.cardImgURL);
+    cardImage.setAttribute("src", "./assets/img/home.png");
+
     cardImage.setAttribute("alt", "");
-    h3.innerHTML = item.cardName;
-    p.innerHTML = item.cardText;
 
-    card.classList = "card card-four border-0 shadow p-0 pb-3 wow bounceIn";
+    h3.innerHTML = paginationItems[i].cardName;
+
+    p.innerHTML = paginationItems[i].cardText;
+
+    card.classList = "card card-four border-0 shadow p-0 pb-3  wow bounceIn";
+
     cardImgParent.classList = "card-img text-center";
+
     cardImage.classList = "shadow-sm mx-auto mt-2";
+
     cardImage.style.width = "50px";
+
     cardInfoParent.classList = "px-2 mt-3";
+
     h3.classList = "fs-5";
-    cardBtn.classList = "card-btn";
 
     wrapper.appendChild(card);
+
     card.appendChild(cardImgParent);
-    cardImgParent.appendChild(cardImage);
+
     card.appendChild(cardInfoParent);
+
+    cardImgParent.appendChild(cardImage);
+
     cardInfoParent.appendChild(h3);
+
     cardInfoParent.appendChild(p);
-    cardInfoParent.appendChild(cardBtn);
   }
 }
+// --------------------------------------------- End serviceDisplayList Function  --------------------------------- //
 
-function setupServicePagination(items, wrapper, rows_per_page) {
+// --------------------------------------------- Start setupServicePagination Function  --------------------------------- //
+function setupServicePagination(items, wrapper, elements_per_page) {
   wrapper.innerHTML = "";
-  let pageCount = Math.ceil(items.length / rows_per_page);
 
-  for (let i = 1; i <= pageCount; i++) {
-    let btn = paginationServiceButtons(i, items);
-    wrapper.appendChild(btn);
+  let pageCount = Math.ceil(items.length / elements_per_page);
+
+  if (pageCount > 1) {
+    for (let i = 1; i <= pageCount; i++) {
+      let btn = paginationServiceButtons(i, items);
+
+      wrapper.appendChild(btn);
+    }
   }
 }
+// --------------------------------------------- End setupServicePagination Function  --------------------------------- //
 
-// funtion to create the Pagination buttons of (service setion)
+// --------------------------------------------- Start paginationServiceButtons Function  --------------------------------- //
 function paginationServiceButtons(page, items) {
-  // Create element of button "Pagination buttons of (service setion)"
   let button = document.createElement("button");
 
-  // Get the number of Pagination buttons of from array
   button.innerHTML = page;
 
-  // set the Pagination buttons  class
   button.classList = "btn shuffle-btn-style";
 
-  // make a condition to check if the current page is equal age to add class active
   if (servicePaginationCurrentPage == page) button.classList.add("active"); // add class active to button
 
-  // add click event to the buttons
   button.addEventListener("click", function (e) {
     paginationToggleButtonsActiveClass(
       e.target,
       document.querySelectorAll(".pagination-wrapper .btn")
     );
-    // change the current page number from page
+
     servicePaginationCurrentPage = page;
 
-    // make a lad for a new data to next page or prev page
     serviceDisplayList(
       items,
       cardsParent,
-      serviceRows,
+      serviceElementsInPaginations,
       servicePaginationCurrentPage
     );
   });
 
   return button;
 }
+// --------------------------------------------- End paginationServiceButtons Function  --------------------------------- //
 
+// --------------------------------------------- Start serviceShuflleHanlde Function  --------------------------------- //
 function serviceShuflleHanlde(newArray) {
   servicePaginationCurrentPage = 1;
+
   serviceDisplayList(
     newArray,
     cardsParent,
-    serviceRows,
+    serviceElementsInPaginations,
     servicePaginationCurrentPage
   );
-  setupServicePagination(newArray, cardsPaginationWrapper, serviceRows);
+
+  setupServicePagination(
+    newArray,
+    cardsPaginationWrapper,
+    serviceElementsInPaginations
+  );
 }
+// --------------------------------------------- End serviceShuflleHanlde Function  --------------------------------- //
 
-window.addEventListener("scroll", function () {
-  if (window.pageYOffset >= 82) {
-    navbar.classList.remove("bg-white");
-    navbar.classList.add("bg-sliver");
-    navbar.classList.add("shadow");
-  } else {
-    navbar.classList.remove("bg-sliver");
-    navbar.classList.remove("shadow");
-    navbar.classList.add("bg-white");
-  }
-});
+// ------------------------------------- Start paginationButtons function  --------------------------- //
+function paginationButtons(page, items) {
+  let button = document.createElement("button");
 
-// function to to remove and add class active to Pagination buttons
+  button.innerHTML = page;
+
+  button.classList = "btn shuffle-btn-style";
+
+  if (galleryPaginationCurrentPage == page) button.classList.add("active");
+
+  button.addEventListener("click", function (e) {
+    paginationToggleButtonsActiveClass(
+      e.target,
+      document.querySelectorAll(".pagination-wrapper .btn")
+    );
+
+    galleryPaginationCurrentPage = page;
+
+    galleryDisplayList(
+      items,
+      galleryImgParent,
+      galleryPaginationElamentInPage,
+      galleryPaginationCurrentPage
+    );
+  });
+
+  return button;
+}
+// ------------------------------------- End paginationButtons function  --------------------------- //
+
+// --------------------------------------------- Start paginationToggleButtonsActiveClass Function  --------------------------------- //
 function paginationToggleButtonsActiveClass(targetElement, buttons) {
   buttons.forEach((el) => {
     el.classList.remove("active");
     targetElement.classList.add("active");
   });
 }
-
-callUsBtnToggle.addEventListener("click", function () {
-  callUsBtns.forEach((el) => {
-    el.classList.toggle("show");
-  });
-  callUsBtnToggle.classList.toggle("show");
-  callUsBtnToggleIcon.classList.toggle("fa-envelope");
-  callUsBtnToggleIcon.classList.toggle("fa-xmark");
-});
+// --------------------------------------------- End paginationToggleButtonsActiveClass Function  --------------------------------- //

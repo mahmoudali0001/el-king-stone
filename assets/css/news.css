@@ -1,0 +1,48 @@
+/* ------------------------------------------------------------- Start News ---------------------------------------------------*/
+.news {
+  padding: 100px 0;
+}
+
+.news-cards-parent .card {
+  border-radius: 10px 10px 0 0;
+  padding: 0;
+  align-items: center;
+  border: 1px solid rgb(197 197 197 / 13%);
+}
+
+.news-cards-parent .card .card-info {
+  padding: 10px;
+  z-index: 2;
+  margin-top: -25px;
+  background-color: white;
+  border-radius: 18px 18px 0 0;
+}
+
+.card img {
+  border-radius: 10px;
+  width: 100%;
+  max-height: 180px;
+}
+
+.news-cards-parent .card .card-info .card-head-text {
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: 400;
+  color: darkcyan;
+}
+
+.news-cards-parent .card .card-info p,
+span {
+  color: #969696;
+  font-size: 12px;
+}
+
+.news-cards-parent .card .card-info a {
+  display: block;
+  background-color: #95da99;
+  border-radius: 15px;
+  color: white;
+  width: 100%;
+}
+
+/* ------------------------------------------------------------- End  News ---------------------------------------------------*/

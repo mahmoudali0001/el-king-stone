@@ -1,22 +1,22 @@
-/* Start Nav Bar */
 * {
   font-family: "Noto Sans Arabic", sans-serif;
 }
 
-/* width */
+html,
+body {
+  overflow-x: hidden;
+}
+
 ::-webkit-scrollbar,
 .dark ::-webkit-scrollbar {
   width: 12px;
   height: 8px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  /* border-radius: 100vh; */
   background: #fff;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #ccc;
   border: 2px solid #fff;
@@ -27,6 +27,7 @@ a {
   color: black;
 }
 
+/*------------------------------------ Start Nav Bar ------------------------------------ */
 .logo {
   width: 120px;
 }
@@ -64,11 +65,15 @@ a {
 .nav-link:hover {
   color: #358688;
 }
-/* Start Header */
+
+/* -------------------------------------------------- End Nav Bar ------------------------------------*/
+
+/* ------------------------------------------------- Start Header ----------------------------------- */
 
 .header {
   padding-top: 180px;
   padding-bottom: 100px;
+  position: relative;
 }
 
 .header-btn-call,
@@ -163,10 +168,13 @@ a {
   }
 }
 
-/* End Header */
+/* --------------------------------------------------------- End Header ------------------------------------------------- */
+
+/* --------------------------------------------------------- Start Service ------------------------------------------------- */
 .service {
   background-color: #eee;
   padding: 20px 0 50px 0;
+  position: relative;
 }
 
 .hidden {
@@ -305,7 +313,8 @@ iframe {
 }
 
 .header-img {
-  width: 550px;
+  border-radius: 30px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 px 8px 24px;
 }
 
 .parent-section {
@@ -378,11 +387,13 @@ iframe {
   color: white;
   background: #f44336;
 }
+/* --------------------------------------------------------- End Service ------------------------------------------------- */
 
-/* Start Testimonials */
+/*  ----------------------------------------------------- Start Testimonials ------------------------------------------------ */
 .testimonials {
   position: relative;
   padding: 0px 0;
+  position: relative;
 }
 
 .testimonials h2 {
@@ -458,12 +469,12 @@ iframe {
   }
 }
 
-/* End Testimonials */
+/* ------------------------------------------------------------ End Testimonials --------------------------------------------------*/
 
-/* Start Gallery */
-
+/* ------------------------------------------------------------ Start Gallery --------------------------------------------------- */
 .gallery {
   padding: 80px 0;
+  position: relative;
 }
 
 @media (max-width: 992px) {
@@ -517,13 +528,13 @@ iframe {
 
 .gallery .row .gallery-item span {
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   left: 50%;
   color: white;
   z-index: 5;
   width: 100%;
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   transform: translate(-50%, -50%);
 }
 
@@ -544,7 +555,7 @@ iframe {
   }
 
   .gallery .row .gallery-item span {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 
@@ -656,10 +667,9 @@ iframe {
   }
 }
 
-/* End Gallery */
+/* ------------------------------------------------------------ End Gallery --------------------------------------------------- */
 
-/* Start Counter */
-
+/* ----------------------------------------------------------- Start Counter ---------------------------------------------------- */
 .counter {
   background-color: white;
   background-image: url("../img/counter-bg.jpg");
@@ -686,7 +696,6 @@ iframe {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: ;
 }
 
 .counter .overlay {
@@ -710,7 +719,9 @@ iframe {
   font-weight: 300;
 }
 
-/* Start Footer */
+/* ----------------------------------------------------------- End Counter ---------------------------------------------------- */
+
+/* -------------------------------------------------------------- Start Footer ------------------------------------------------ */
 
 footer {
   background: #eee;
@@ -785,10 +796,9 @@ footer .gallery img {
   border: 3px solid #dcb0a0;
   border-radius: 5px;
 }
-/* End Footer */
+/* ----------------------------------------------------------------- End Footer ------------------------------------------------------ */
 
-/* Start Who We Are */
-
+/* -------------------------------------------------------------- Start Who We Are ---------------------------------------------------- */
 .who-we-are {
   padding: 80px 0;
 }
@@ -817,7 +827,14 @@ footer .gallery img {
   margin: 30px 0;
 }
 
-/* Start Call Us */
+.who-we-are-text p {
+  color: #8b8b8b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+/* -------------------------------------------------------------- End Who We Are ---------------------------------------------------- */
+
+/* -------------------------------------------------------------- Start Call Us ------------------------------------------------------- */
 .call-us {
   position: fixed;
   bottom: 10px;
@@ -887,18 +904,12 @@ footer .gallery img {
   background-color: #2196f3eb;
   z-index: 101;
 }
-/* Start Who We Are Page */
-.who-we-are-text p {
-  color: #8b8b8b;
-  font-size: 14px;
-  line-height: 1.8;
-}
-/* End Who We Are */
+/* -------------------------------------------------------------- End Call Us ------------------------------------------------------- */
 
-/* Start Service Page */
-
-.service-page {
+/* ------------------------------------------------------------- Start Service Page ------------------------------------------------- */
+.service-page,
+.news {
   padding: 100px 0;
   background: white;
 }
-/* Start Service Page */
+/* ------------------------------------------------------------- End Service Page ------------------------------------------------- */
