@@ -91,15 +91,15 @@ window.addEventListener("scroll", function () {
 // ---------------------------------------- End Nav Bar add Class when scroll ------------------------------- //
 
 //---------------------------------------------- Start Counter Sedtion count when scroll ---------------------------------------- //
-window.addEventListener("scroll",function () {
+window.addEventListener("scroll", function () {
   if (window.scrollY >= counterSection.offsetTop - navbar.offsetHeight) {
     if (!started) {
       counterNums.forEach((el) => startCount(el));
     }
 
     started = true;
-  } 
-}) ;
+  }
+});
 
 //---------------------------------------------- End Counter Sedtion count when scroll ---------------------------------------- //
 
@@ -472,6 +472,7 @@ serviceSwitcherList.forEach((btn) => {
   btn.addEventListener("click", function (e) {
     switch (e.target.dataset.work) {
       case "exterior-design":
+        filterOfServiceData = [];
         filterOfServiceData = cardsData.filter((el) => {
           return el.category == "exterior-design";
         });
@@ -480,6 +481,7 @@ serviceSwitcherList.forEach((btn) => {
         break;
 
       case "interior-design":
+        filterOfServiceData = [];
         filterOfServiceData = cardsData.filter((el) => {
           return el.category == "interior-design";
         });
@@ -488,6 +490,7 @@ serviceSwitcherList.forEach((btn) => {
         break;
 
       case ".anthor-works":
+        filterOfServiceData = [];
         filterOfServiceData = cardsData.filter((el) => {
           return el.category == "anthor-works";
         });
@@ -572,8 +575,6 @@ function galleryDisplayList(items, wrapper, elements_per_page, page) {
     wrapper.appendChild(article);
   }
 }
-// ---------------------------------------- End galleryDisplayList function  ------------------------------- //
-
 // ---------------------------------------- End galleryDisplayList function  ------------------------------- //
 
 // ------------------------------------- Start gallerySetupPagination function  ---------------------- //
@@ -687,7 +688,6 @@ function imgChangeHanlde() {
 
 // --------------------------------------------- Start PreventDefault of span of gallery Image  --------------------------------- //
 document.querySelectorAll(".gallery .gallery-item span").forEach((el) => {
-  console.log(el);
   el.addEventListener("click", (e) => {
     e.preventDefault();
   });

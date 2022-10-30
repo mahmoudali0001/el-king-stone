@@ -296,36 +296,6 @@ function serviceShuflleHanlde(newArray) {
 }
 // --------------------------------------------- End serviceShuflleHanlde Function  --------------------------------- //
 
-// ------------------------------------- Start paginationButtons function  --------------------------- //
-function paginationButtons(page, items) {
-  let button = document.createElement("button");
-
-  button.innerHTML = page;
-
-  button.classList = "btn shuffle-btn-style";
-
-  if (galleryPaginationCurrentPage == page) button.classList.add("active");
-
-  button.addEventListener("click", function (e) {
-    paginationToggleButtonsActiveClass(
-      e.target,
-      document.querySelectorAll(".pagination-wrapper .btn")
-    );
-
-    galleryPaginationCurrentPage = page;
-
-    galleryDisplayList(
-      items,
-      galleryImgParent,
-      galleryPaginationElamentInPage,
-      galleryPaginationCurrentPage
-    );
-  });
-
-  return button;
-}
-// ------------------------------------- End paginationButtons function  --------------------------- //
-
 // --------------------------------------------- Start paginationToggleButtonsActiveClass Function  --------------------------------- //
 function paginationToggleButtonsActiveClass(targetElement, buttons) {
   buttons.forEach((el) => {
