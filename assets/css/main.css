@@ -1,5 +1,5 @@
 * {
-  font-family: "Noto Sans Arabic", sans-serif;
+  font-family: 'Noto Sans Arabic', sans-serif;
 }
 
 html,
@@ -116,7 +116,7 @@ a {
 }
 
 .header-btn-more:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -142,7 +142,7 @@ a {
 }
 
 .header-btn-call:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -192,7 +192,7 @@ a {
 
 .service-header:before,
 .service-header:after {
-  content: "";
+  content: '';
   position: absolute;
   height: 3px;
   background: #f44336;
@@ -319,7 +319,7 @@ iframe {
 }
 
 .parent-section {
-  background-image: url("../img/bg-service.jpg");
+  background-image: url('../img/bg-service.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -510,7 +510,7 @@ iframe {
 
 .gallery h3:before,
 .gallery h3:after {
-  content: "";
+  content: '';
   position: absolute;
   height: 3px;
   background: #f44336;
@@ -536,6 +536,7 @@ iframe {
   background-color: #eee;
   position: relative;
   overflow: hidden;
+  position: relative;
 }
 
 .gallery-item:hover .gallery-img {
@@ -545,6 +546,18 @@ iframe {
 .gallery .row .gallery-item .overlay {
   width: 100%;
   background-color: #00000038;
+}
+
+.gallery .row .gallery-item .moving-div {
+  background-color: #eee;
+  width: 100%;
+  height: 100%;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .gallery .row .gallery-item span {
@@ -694,7 +707,7 @@ iframe {
 /* ----------------------------------------------------------- Start Counter ---------------------------------------------------- */
 .counter {
   background-color: white;
-  background-image: url("../img/counter-bg.jpg");
+  background-image: url('../img/counter-bg.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -738,6 +751,19 @@ iframe {
   font-size: 20px;
   line-height: 1.3;
   font-weight: 300;
+}
+
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(300px);
+    transform: translateX(300px);
+  }
 }
 
 /* ----------------------------------------------------------- End Counter ---------------------------------------------------- */
@@ -825,7 +851,7 @@ footer .gallery img {
 }
 
 .who-we-are-bg {
-  background-image: url("../img/who-we-are-bg.jpg");
+  background-image: url('../img/who-we-are-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

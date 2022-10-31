@@ -543,6 +543,7 @@ function galleryDisplayList(items, wrapper, elements_per_page, page) {
   for (let i = 0; i < paginationItems.length; i++) {
     let article = document.createElement("article");
     let overlay = document.createElement("div");
+    let movingDiv= document.createElement("div");
     let img = document.createElement("img");
     let span = document.createElement("span");
 
@@ -554,6 +555,7 @@ function galleryDisplayList(items, wrapper, elements_per_page, page) {
     img.classList = "gallery-img";
     article.classList = "col-3 p-0 gallery-item wow bounceIn";
     overlay.classList = "overlay";
+    movingDiv.classList = "moving-div wow fadeOutRight";
 
     overlay.addEventListener("click", () => {
       numbersOfCount = 0;
@@ -571,6 +573,8 @@ function galleryDisplayList(items, wrapper, elements_per_page, page) {
     article.appendChild(overlay);
     article.appendChild(img);
     article.appendChild(span);
+    article.appendChild(movingDiv)
+
 
     wrapper.appendChild(article);
   }
