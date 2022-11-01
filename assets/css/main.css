@@ -732,7 +732,7 @@ iframe {
   background-color: #eee;
   width: 100%;
   height: 100%;
-  animation-duration: 5s;
+  animation-duration: 2s;
   animation-delay: 1s;
   animation-fill-mode: forwards;
   position: absolute;
@@ -786,7 +786,7 @@ iframe {
   position: fixed;
   top: 0;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.96);
   width: 100%;
   z-index: 1000;
   display: none;
@@ -816,13 +816,18 @@ iframe {
   position: absolute;
   margin: 9px;
   z-index: 1025;
-  color: #ffffffd1;
-  background-color: #f44336;
+  color: #9e9e9e;
   padding: 4px 10px;
   border-radius: 50%;
-  font-size: 20px;
-  top: -20px;
-  right: -20px;
+  font-size: 39px;
+  top: 0;
+  right: 0;
+  transition: 0.1s linear;
+  cursor: pointer;
+}
+
+#exit-btn:hover {
+  color: white;
 }
 
 #prev-arrow,
@@ -830,9 +835,15 @@ iframe {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: #9e9e9e;
   font-size: 40px;
   padding: 15px;
+  cursor: pointer;
+}
+
+#prev-arrow:hover,
+#next-arrow:hover {
+  color: white;
 }
 
 #prev-arrow {

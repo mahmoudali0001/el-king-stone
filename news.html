@@ -38,6 +38,13 @@
     <title>من نحن | الرئيسية - شركة الكينج ستون</title>
   </head>
   <body>
+    <!----------------------------------------------------- Start Loading Element ------------------------------------------->
+    <section class="loading-parent">
+      <img src="./assets/img/Logo.web" alt="" />
+      <div class="loader"></div>
+    </section>
+    <!----------------------------------------------------- End Loading Element ------------------------------------------------->
+
     <!-------------------------------------------------------------------- Start Nav Bar --------------------------------------------------->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container">
@@ -325,6 +332,8 @@
       new WOW().init();
 
       // ---------------------------------------------------- Start Catching Elements ------------------------------------------------- //
+      let loadingElement = document.querySelector(".loading-parent");
+
       let callUsBtns = document.querySelectorAll(".call-us a");
 
       let callUsBtnToggle = document.querySelector(".call-us .message-btn");
@@ -336,6 +345,18 @@
       let navbar = document.querySelector(".navbar");
 
       // ---------------------------------------------------- End Catching Elements ------------------------------------------------- //
+
+      // ------------------------------------- Start Loading Element  ------------------------------ //
+
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          loadingElement.style.background = "transparent";
+        }, 3900);
+        setTimeout(() => {
+          loadingElement.style.display = "none";
+        }, 3950);
+      });
+      // ------------------------------------- End Loading Element  ------------------------------ //
 
       // ---------------------------------------- Start Nav Bar add Class when scroll ------------------------------ //
       window.addEventListener("scroll", function () {

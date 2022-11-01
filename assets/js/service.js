@@ -1,6 +1,7 @@
 new WOW().init();
 
 //--------------------------------------- Start Catching elements ---------------------------------//
+let loadingElement = document.querySelector(".loading-parent");
 
 let serviceSwitcherList = document.querySelectorAll(
   ".service .shuffle-btns span"
@@ -104,6 +105,18 @@ const cardsData = [
 ];
 // ---------------------------------- End Creating Array of Array of Objects cardsData ---------------------------- //
 
+// ------------------------------------- Start Loading Element  ------------------------------ //
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    loadingElement.style.background = "transparent";
+  }, 3900);
+  setTimeout(() => {
+    loadingElement.style.display = "none";
+  }, 3950);
+});
+// ------------------------------------- End Loading Element  ------------------------------ //
+
 // ---------------------------------------- Start Nav Bar add Class when scroll ------------------------------- //
 window.addEventListener("scroll", function () {
   if (window.pageYOffset >= 82) {
@@ -206,6 +219,8 @@ function serviceDisplayList(items, wrapper, elements_per_page, page) {
 
     card.classList = "card card-four border-0 shadow p-0 pb-3  wow bounceIn";
 
+    card.setAttribute("data-wow-delay", "4s");
+
     cardImgParent.classList = "card-img text-center";
 
     cardImage.classList = "shadow-sm mx-auto mt-2";
@@ -304,7 +319,6 @@ function paginationToggleButtonsActiveClass(targetElement, buttons) {
   });
 }
 // --------------------------------------------- End paginationToggleButtonsActiveClass Function  --------------------------------- //
-
 
 // ------------------------------------------------------ Start callUsBtnToggle Click  ---------------------------------- //
 callUsBtnToggle.addEventListener("click", function () {
