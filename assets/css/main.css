@@ -640,7 +640,7 @@ iframe {
   transform: scale(1.1);
   z-index: 1;
 }
-@media (max-width: 776px) {
+@media (max-width: 1025px) {
   .testimonials .med-card {
     transform: scale(1);
   }
@@ -964,7 +964,12 @@ iframe {
 footer {
   background: #eee;
   color: black;
+  padding: 50px 0;
   border-top: 1px solid #eee;
+}
+
+footer .gallery {
+  padding: 0;
 }
 
 footer .logo {
@@ -977,10 +982,9 @@ footer .logo {
 
 .links i {
   width: 50px;
-  height: 50px;
   background: #1c1c1c;
   font-size: 25px;
-  padding: 10px;
+  padding: 12px 0;
   color: #fff;
   border-radius: 10px;
   transition: 0.5s ease-out;
