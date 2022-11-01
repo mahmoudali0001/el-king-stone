@@ -1,6 +1,7 @@
 new WOW().init(); // init wow.js
 
 //--------------------------------------- Start Catching elements ---------------------------------//
+let loadingElement = document.querySelector(".loading-parent");
 
 let serviceSwitcherList = document.querySelectorAll(
   ".service .shuffle-btns span"
@@ -71,6 +72,17 @@ let galleryPaginationCurrentPage = 1;
 let galleryPaginationElamentInPage = 9;
 
 // ------------------------------------- End Creating Global Variable ------------------------------ //
+
+// ------------------------------------- Start Loading Element  ------------------------------ //
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    loadingElement.style.background = "transparent";
+  }, 3900);
+  setTimeout(() => {
+    loadingElement.style.display = "none";
+  }, 3950);
+});
+// ------------------------------------- End Loading Element  ------------------------------ //
 
 // ---------------------------------------- Start Nav Bar add Class when scroll ------------------------------- //
 window.addEventListener("scroll", function () {
@@ -543,7 +555,7 @@ function galleryDisplayList(items, wrapper, elements_per_page, page) {
   for (let i = 0; i < paginationItems.length; i++) {
     let article = document.createElement("article");
     let overlay = document.createElement("div");
-    let movingDiv= document.createElement("div");
+    let movingDiv = document.createElement("div");
     let img = document.createElement("img");
     let span = document.createElement("span");
 
@@ -573,8 +585,7 @@ function galleryDisplayList(items, wrapper, elements_per_page, page) {
     article.appendChild(overlay);
     article.appendChild(img);
     article.appendChild(span);
-    article.appendChild(movingDiv)
-
+    article.appendChild(movingDiv);
 
     wrapper.appendChild(article);
   }
