@@ -24,53 +24,82 @@ let navbar = document.querySelector(".navbar");
 // ---------------------------------------------------- End Catching Elements ------------------------------------------------- //
 
 // ------------------------------------- Start Loading Element  ------------------------------ //
+function handleLoadingPage() {
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      loadingElement.style.display = "none";
+    }, 1500);
+  });
+}
 
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    loadingElement.style.display = "none";
-  }, 1500);
-});
+handleLoadingPage();
 // ------------------------------------- End Loading Element  ------------------------------ //
 
 // ------------------------------------ Start NavBar toggle class list ------------------------- ///
-navBarBtn.addEventListener("click", () => {
-  navbarOverlay.classList.add("show");
-  navbarMenuBtns.forEach((el) => {
-    el.classList.add("show-links");
+function handleNavBarMenu() {
+  navBarBtn.addEventListener("click", () => {
+    navbarOverlay.classList.add("show");
+    navbarMenuBtns.forEach((el) => {
+      el.classList.add("show-links");
+    });
   });
-});
 
-exitMenu.addEventListener("click", () => {
-  navBarMenu.classList.remove("show");
-  navbarOverlay.classList.remove("show");
-  navbarMenuBtns.forEach((el) => {
-    el.classList.remove("show-links");
+  navbarOverlay.addEventListener("click", () => {
+    navBarMenu.classList.remove("show");
+    navbarOverlay.classList.remove("show");
+    navbarMenuBtns.forEach((el) => {
+      el.classList.remove("show-links");
+    });
   });
-});
+
+  exitMenu.addEventListener("click", () => {
+    navBarMenu.classList.remove("show");
+    navbarOverlay.classList.remove("show");
+    navbarMenuBtns.forEach((el) => {
+      el.classList.remove("show-links");
+    });
+  });
+}
+
+handleNavBarMenu();
 // ------------------------------------ End NavBar toggle class list ------------------------- ///
 
 // ---------------------------------------- Start Nav Bar add Class when scroll ------------------------------ //
-window.addEventListener("scroll", function () {
-  if (window.pageYOffset >= 82) {
-    navbar.classList.remove("bg-white");
-    navbar.classList.add("bg-sliver");
-    navbar.classList.add("shadow");
-  } else {
-    navbar.classList.remove("bg-sliver");
-    navbar.classList.add("bg-white");
-    navbar.classList.remove("shadow");
-  }
-});
+function handleNavBarBgOnScroll() {
+  window.addEventListener("scroll", function () {
+    if (window.pageYOffset >= 82) {
+      navbar.classList.remove("bg-white");
+      navbar.classList.add("bg-sliver");
+      navbar.classList.add("shadow");
+    } else {
+      navbar.classList.remove("bg-sliver");
+      navbar.classList.add("bg-white");
+      navbar.classList.remove("shadow");
+    }
+  });
+}
+handleNavBarBgOnScroll();
 // ---------------------------------------- End Nav Bar add Class when scroll ------------------------------ //
 
 // ------------------------------------------------------ Start callUsBtnToggle Click  ---------------------------------- //
-callUsBtnToggle.addEventListener("click", function () {
-  callUsBtns.forEach((el) => {
-    el.classList.toggle("show");
-  });
+function handleCallUsButton() {
+  callUsBtnToggle.addEventListener("click", function () {
+    callUsBtns.forEach((el) => {
+      el.classList.toggle("show");
+    });
 
-  callUsBtnToggle.classList.toggle("show");
-  callUsBtnToggleIcon.classList.toggle("fa-envelope");
-  callUsBtnToggleIcon.classList.toggle("fa-xmark");
-});
+    callUsBtnToggle.classList.toggle("show");
+    callUsBtnToggleIcon.classList.toggle("fa-envelope");
+    callUsBtnToggleIcon.classList.toggle("fa-xmark");
+  });
+}
+
+handleCallUsButton();
 // ------------------------------------------------------ Start callUsBtnToggle Click  ---------------------------------- //
+
+export {
+  handleNavBarMenu,
+  handleCallUsButton,
+  handleLoadingPage,
+  handleNavBarBgOnScroll,
+};

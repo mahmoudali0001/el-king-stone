@@ -1,17 +1,13 @@
 new WOW().init();
 
+import {
+  handleNavBarMenu,
+  handleCallUsButton,
+  handleLoadingPage,
+  handleNavBarBgOnScroll,
+} from "./forAll.js";
 //--------------------------------------- Start Catching elements ---------------------------------//
 let loadingElement = document.querySelector(".loading-parent");
-
-let navBarBtn = document.querySelector(".navbar-toggler");
-
-let navBarMenu = document.querySelector("#navbarSupportedContent");
-
-let navbarMenuBtns = document.querySelectorAll(".nav-item");
-
-let exitMenu = document.querySelector(".exit-menu");
-
-let navbarOverlay = document.querySelector(".navbar .overlay");
 
 let serviceSwitcherList = document.querySelectorAll(
   ".service .shuffle-btns span"
@@ -29,8 +25,6 @@ let callUsBtns = document.querySelectorAll(".call-us a");
 let callUsBtnToggle = document.querySelector(".call-us .message-btn");
 
 let callUsBtnToggleIcon = document.querySelector(".call-us .message-btn i");
-
-let cards = document.querySelectorAll(".service .container .card");
 
 //--------------------------------------- End Catching elements ---------------------------------//
 
@@ -116,47 +110,15 @@ const cardsData = [
 // ---------------------------------- End Creating Array of Array of Objects cardsData ---------------------------- //
 
 // ------------------------------------- Start Loading Element  ------------------------------ //
-
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    loadingElement.style.display = "none";
-  }, 1500);
-});
+handleLoadingPage();
 // ------------------------------------- End Loading Element  ------------------------------ //
 
 // ------------------------------------ Start NavBar toggle class list ------------------------- ///
-navBarBtn.addEventListener("click", () => {
-  navbarOverlay.classList.add("show");
-  navbarMenuBtns.forEach((el) => {
-    el.classList.add("show-links");
-  });
-});
-
-exitMenu.addEventListener("click", () => {
-  navBarMenu.classList.remove("show");
-  navbarOverlay.classList.remove("show");
-  navbarMenuBtns.forEach((el) => {
-    el.classList.remove("show-links");
-  });
-});
+handleNavBarMenu();
 // ------------------------------------ End NavBar toggle class list ------------------------- ///
 
 // ---------------------------------------- Start Nav Bar add Class when scroll ------------------------------- //
-window.addEventListener("scroll", function () {
-  if (window.pageYOffset >= 82) {
-    navbar.classList.remove("bg-white");
-
-    navbar.classList.add("bg-sliver");
-
-    navbar.classList.add("shadow");
-  } else {
-    navbar.classList.remove("shadow");
-
-    navbar.classList.remove("bg-sliver");
-
-    navbar.classList.add("bg-white");
-  }
-});
+handleNavBarBgOnScroll();
 // ---------------------------------------- End Nav Bar add Class when scroll ------------------------------- //
 
 // --------------------------------------- Start loop in shuffle buttons of Service ---------------------------- //
@@ -351,4 +313,6 @@ callUsBtnToggle.addEventListener("click", function () {
   callUsBtnToggleIcon.classList.toggle("fa-envelope");
   callUsBtnToggleIcon.classList.toggle("fa-xmark");
 });
+
+handleCallUsButton();
 // -------------------------------------------------------- End callUsBtnToggle Click  -------------------------------------------- //
