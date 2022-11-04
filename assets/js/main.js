@@ -3,6 +3,16 @@ new WOW().init(); // init wow.js
 //--------------------------------------- Start Catching elements ---------------------------------//
 let loadingElement = document.querySelector(".loading-parent");
 
+let navBarBtn = document.querySelector(".navbar-toggler");
+
+let navBarMenu = document.querySelector("#navbarSupportedContent");
+
+let navbarMenuBtns = document.querySelectorAll(".nav-item");
+
+let exitMenu = document.querySelector(".exit-menu");
+
+let navbarOverlay = document.querySelector(".navbar .overlay");
+
 let serviceSwitcherList = document.querySelectorAll(
   ".service .shuffle-btns span"
 );
@@ -76,13 +86,27 @@ let galleryPaginationElamentInPage = 9;
 // ------------------------------------- Start Loading Element  ------------------------------ //
 window.addEventListener("load", () => {
   setTimeout(() => {
-    loadingElement.style.background = "transparent";
-  }, 3900);
-  setTimeout(() => {
     loadingElement.style.display = "none";
-  }, 3950);
+  }, 1500);
 });
 // ------------------------------------- End Loading Element  ------------------------------ //
+
+// ------------------------------------ Start NavBar toggle class list ------------------------- ///
+navBarBtn.addEventListener("click", () => {
+  navbarOverlay.classList.add("show");
+  navbarMenuBtns.forEach((el) => {
+    el.classList.add("show-links");
+  });
+});
+
+exitMenu.addEventListener("click", () => {
+  navBarMenu.classList.remove("show");
+  navbarOverlay.classList.remove("show");
+  navbarMenuBtns.forEach((el) => {
+    el.classList.remove("show-links");
+  });
+});
+// ------------------------------------ End NavBar toggle class list ------------------------- ///
 
 // ---------------------------------------- Start Nav Bar add Class when scroll ------------------------------- //
 window.addEventListener("scroll", function () {

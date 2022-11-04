@@ -61,22 +61,26 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="overlay"></div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+            <li class="exit-menu">
+              <i class="fa-solid fa-xmark"></i>
+            </li>
+            <li class="nav-item one">
               <a class="nav-link" aria-current="page" href="index.html"
                 >الرئيسية</a
               >
             </li>
-            <li class="nav-item">
+            <li class="nav-item two">
               <a class="nav-link active" href="#">من نحن</a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item three">
               <a class="nav-link" href="service.html">خدماتنا</a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item four">
               <a class="nav-link" href="news.html">اخبارنا</a>
             </li>
 
@@ -96,12 +100,12 @@
       <section class="who-we-are-bg">
         <div class="overlay"></div>
         <section class="container">
-          <h1 class="wow bounceInRight" data-wow-delay="3.5s">من نحن</h1>
+          <h1 class="wow bounceInRight" data-wow-delay="1.5s">من نحن</h1>
         </section>
       </section>
 
       <section class="who-we-are-text container">
-        <h3 class="wow fadeInDown" data-wow-delay="3.5s">
+        <h3 class="wow fadeInDown" data-wow-delay="1.5s">
           نحن نسعى لتقديم افضل الخدمات بافضل سعر و افضل جودة مع الكينج ثقه
           لاتنتهى
         </h3>
@@ -235,61 +239,6 @@
 
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/wow.min.js"></script>
-    <script>
-      new WOW().init();
-
-      // ---------------------------------------------------- Start Catching Elements ------------------------------------------------- //
-      let loadingElement = document.querySelector(".loading-parent");
-
-      let callUsBtns = document.querySelectorAll(".call-us a");
-
-      let callUsBtnToggle = document.querySelector(".call-us .message-btn");
-
-      let callUsBtnToggleIcon = document.querySelector(
-        ".call-us .message-btn i"
-      );
-
-      let navbar = document.querySelector(".navbar");
-
-      // ---------------------------------------------------- End Catching Elements ------------------------------------------------- //
-
-      // ------------------------------------- Start Loading Element  ------------------------------ //
-
-      window.addEventListener("load", () => {
-        setTimeout(() => {
-          loadingElement.style.background = "transparent";
-        }, 3900);
-        setTimeout(() => {
-          loadingElement.style.display = "none";
-        }, 3950);
-      });
-      // ------------------------------------- End Loading Element  ------------------------------ //
-
-      // ---------------------------------------- Start Nav Bar add Class when scroll ------------------------------ //
-      window.addEventListener("scroll", function () {
-        if (window.pageYOffset >= 82) {
-          navbar.classList.remove("bg-white");
-          navbar.classList.add("bg-sliver");
-          navbar.classList.add("shadow");
-        } else {
-          navbar.classList.remove("bg-sliver");
-          navbar.classList.add("bg-white");
-          navbar.classList.remove("shadow");
-        }
-      });
-      // ---------------------------------------- End Nav Bar add Class when scroll ------------------------------ //
-
-      // ------------------------------------------------------ Start callUsBtnToggle Click  ---------------------------------- //
-      callUsBtnToggle.addEventListener("click", function () {
-        callUsBtns.forEach((el) => {
-          el.classList.toggle("show");
-        });
-
-        callUsBtnToggle.classList.toggle("show");
-        callUsBtnToggleIcon.classList.toggle("fa-envelope");
-        callUsBtnToggleIcon.classList.toggle("fa-xmark");
-      });
-      // ------------------------------------------------------ Start callUsBtnToggle Click  ---------------------------------- //
-    </script>
+    <script src="./assets/js/forAll.js"></script>
   </body>
 </html>

@@ -9,76 +9,76 @@
 }
 
 .wave-parent {
-  position:relative;
-  width:100%;
+  position: relative;
+  width: 100%;
   overflow: hidden;
+  z-index: 5;
 }
 
 .wave-parent .wave {
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  height:40px;
-  background-image:url("../img/wave.png");
-  background-size:1000px  40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-image: url("../img/wave.png");
+  background-size: 1000px 40px;
 }
-
 
 @media (max-width: 767px) {
   .wave-parent .wave {
-  background-size:500px  40px;
+    background-size: 500px 40px;
   }
 }
 .wave-parent .wave.wave-1 {
   animation: animate 30s linear infinite;
-  opacity: 1; 
-  z-index:1;
-  animation-delay:0s;
-  bottom:0;
+  opacity: 1;
+  z-index: 1;
+  animation-delay: 0s;
+  bottom: 0;
 }
 
 .wave-parent .wave.wave-2 {
   animation: animate-2 15s linear infinite;
-  z-index:1000;
-  opacity: 0.5; 
-  animation-delay:-5s;
-  bottom:7px;
+  z-index: 1000;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 7px;
 }
 
 @keyframes animate-2 {
-  0%{
-      background-position-x: 0;
+  0% {
+    background-position-x: 0;
   }
 
-  100%{
-      background-position-x: -1000px;
+  100% {
+    background-position-x: -1000px;
   }
 }
 
 .wave-parent .wave.wave-3 {
   animation: animate 7s linear infinite;
-  z-index:998;
-  opacity: 0.2; 
-  animation-delay:-3s;
-  bottom:10px;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -3s;
+  bottom: 10px;
 }
 
 .wave-parent .wave.wave-4 {
   animation: animate-2 15s linear infinite;
-  z-index:997;
-  opacity: 0.7; 
-  animation-delay:-5s;
-  bottom:15px;
+  z-index: 997;
+  opacity: 0.7;
+  animation-delay: -5s;
+  bottom: 15px;
 }
 
 @keyframes animate {
-  0%{
-      background-position-x: 0;
+  0% {
+    background-position-x: 0;
   }
 
-  100%{
-      background-position-x: 1000px;
+  100% {
+    background-position-x: 1000px;
   }
 }
 
