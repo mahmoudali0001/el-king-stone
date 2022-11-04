@@ -7,13 +7,10 @@ import {
   handleNavBarBgOnScroll,
 } from "./forAll.js";
 //--------------------------------------- Start Catching elements ---------------------------------//
-let loadingElement = document.querySelector(".loading-parent");
 
 let serviceSwitcherList = document.querySelectorAll(
   ".service .shuffle-btns span"
 );
-
-let navbar = document.querySelector(".navbar");
 
 let cardsParent = document.querySelector(".card-parent");
 let cardsPaginationWrapper = document.querySelector(
@@ -33,6 +30,8 @@ let callUsBtnToggleIcon = document.querySelector(".call-us .message-btn i");
 let servicePaginationCurrentPage = 1;
 
 let serviceElementsInPaginations = 4;
+
+let filterOfServiceData = [];
 // ------------------------------------- End Creating Global Variable ------------------------------ //
 
 // ---------------------------------- Start Creating Array of Array of Objects cardsData ---------------------------- //
